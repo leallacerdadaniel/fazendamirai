@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 16% 97%;
+    --foreground: 213 50% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 50% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 50% 12%;
+
+    --primary: 213 68% 14%;
+    --primary-foreground: 43 52% 90%;
+
+    --secondary: 43 52% 54%;
+    --secondary-foreground: 213 68% 14%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 213 20% 46%;
+
+    --accent: 43 52% 54%;
+    --accent-foreground: 213 68% 14%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 213 20% 88%;
+    --input: 213 20% 88%;
+    --ring: 43 52% 54%;
+
+    --radius: 0.5rem;
+    --farm-navy: 214 68% 14%;
+    --farm-gold: 45 54% 54%;
+    --farm-gold-light: 47 61% 77%;
+    --overlay: 213 50% 8%;
+    --shadow-soft: 0 4px 20px hsl(213 50% 12% / 0.04);
+
+    --sidebar-background: 213 68% 14%;
+    --sidebar-foreground: 43 52% 90%;
+    --sidebar-primary: 43 52% 54%;
+    --sidebar-primary-foreground: 213 68% 14%;
+    --sidebar-accent: 213 60% 20%;
+    --sidebar-accent-foreground: 43 52% 90%;
+    --sidebar-border: 213 50% 22%;
+    --sidebar-ring: 43 52% 54%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Cores de cada módulo (acentos sobre a base navy/dourado) */
+    --tone-inicio: 45 54% 48%;
+    --tone-rebanho: 152 45% 36%;
+    --tone-reproducao: 340 58% 52%;
+    --tone-producao: 205 75% 45%;
+    --tone-saude: 4 70% 54%;
+    --tone-nutricao: 88 48% 40%;
+    --tone-comercial: 32 85% 48%;
+    --tone-estrutura: 262 35% 52%;
+    --tone-gestao: 213 30% 40%;
+  }
+
+  .dark {
+    --background: 213 50% 8%;
+    --foreground: 210 20% 94%;
+    --card: 213 50% 12%;
+    --card-foreground: 210 20% 94%;
+    --popover: 213 50% 12%;
+    --popover-foreground: 210 20% 94%;
+    --primary: 43 52% 54%;
+    --primary-foreground: 213 68% 14%;
+    --secondary: 213 60% 20%;
+    --secondary-foreground: 210 20% 94%;
+    --muted: 213 40% 16%;
+    --muted-foreground: 213 20% 60%;
+    --accent: 43 52% 54%;
+    --accent-foreground: 213 68% 14%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 213 40% 20%;
+    --input: 213 40% 20%;
+    --ring: 43 52% 54%;
+    --sidebar-background: 213 60% 8%;
+    --sidebar-foreground: 43 52% 90%;
+    --sidebar-primary: 43 52% 54%;
+    --sidebar-primary-foreground: 213 68% 14%;
+    --sidebar-accent: 213 50% 14%;
+    --sidebar-accent-foreground: 43 52% 90%;
+    --sidebar-border: 213 40% 16%;
+    --sidebar-ring: 43 52% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Manrope', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', system-ui, sans-serif;
+    letter-spacing: 0;
+  }
+}
+
+@layer components {
+  .module-nav { scrollbar-width: none; }
+  .module-nav::-webkit-scrollbar { display: none; }
+  .module-link svg { color: hsl(var(--tone)); }
+  .module-link[aria-current="page"] { border-color: hsl(var(--tone)); background: hsl(var(--tone) / 0.08); }
+  .tone-strip { height: 3px; background: linear-gradient(90deg, hsl(var(--tone-rebanho)), hsl(var(--tone-reproducao)), hsl(var(--tone-producao)), hsl(var(--tone-nutricao)), hsl(var(--tone-comercial)), hsl(var(--farm-gold))); }
+  .sub-pill[aria-current="page"] { background: hsl(var(--tone)); color: hsl(0 0% 100%); }
+  .sub-pill[aria-current="page"]:hover { background: hsl(var(--tone) / 0.9); color: hsl(0 0% 100%); }
+  .tone-icon { color: hsl(var(--tone)); background: hsl(var(--tone) / 0.12); }
+  .farm-content { animation: content-enter 180ms ease-out; }
+  .farm-content > div > div:first-child:has(h1) { flex-wrap: wrap; gap: 1rem; }
+  .farm-content [role="tablist"] { max-width: 100%; overflow-x: auto; justify-content: flex-start; scrollbar-width: thin; }
+  .farm-content [role="tab"] { flex-shrink: 0; }
+  .farm-content h1 { line-height: 1.25; }
+  .mobile-bottom { padding-bottom: env(safe-area-inset-bottom); }
+  .farm-photo { object-position: center 45%; }
+  .overview-metrics { box-shadow: var(--shadow-soft); }
+  .overview-metrics > div + div { border-left: 1px solid hsl(var(--border)); }
+  .route-transition { opacity: 1; }
+  .route-transition[data-phase="exit"] { animation: transition-out 240ms ease-in both; pointer-events: none; }
+  .route-transition-scene { animation: content-enter 320ms ease-out both; }
+  .route-transition-icon svg { animation: transition-icon 1600ms ease-in-out infinite; }
+  .route-transition-progress { animation: transition-progress 1100ms ease-in-out infinite; }
+}
+
+@keyframes transition-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes transition-icon { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes transition-progress { from { transform: translateX(-100%); } to { transform: translateX(200%); } }
+
+@keyframes content-enter {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 767px) {
+  .farm-content [role="tablist"] { display: flex; width: 100%; }
+  .farm-content .grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+  .farm-content .grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 > div p { overflow-wrap: anywhere; }
+  .overview-metrics > div:nth-child(3) { border-left: 0; }
+  .overview-metrics > div:nth-child(n+3) { border-top: 1px solid hsl(var(--border)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}

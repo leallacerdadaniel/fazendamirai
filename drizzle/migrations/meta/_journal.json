@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1791832384102,
+      "tag": "0000_gestao_socios",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791834698620,
+      "tag": "0001_importacao_planilha_mirai",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791834887396,
+      "tag": "0002_ampliar_valores_importacao",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1791858113816,
+      "tag": "0003_plantio_orcamento",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1791862411722,
+      "tag": "0004_dados_associacoes",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1791862835557,
+      "tag": "0005_consultas_animais_storage_policies",
+      "breakpoints": true
+    }
+  ]
+}
