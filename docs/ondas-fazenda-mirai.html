@@ -190,7 +190,7 @@ td.nos{background:color-mix(in srgb,var(--ouro) 10%,var(--card))}
     </div>
     <h1>Do sistema da Miraí ao produto do agro</h1>
     <p class="lead">Vinte e sete ondas, na ordem em que as dependências mandam: primeiro trazer o que existe e pôr o dado real em casa própria, depois o app do campo que funciona sem sinal, o painel do escritório, a gestão junto da zootecnia, leite e corte, as integrações e, por fim, as lojas e a venda para outros fazendeiros. Marque as caixas conforme andar; o que você marcar fica salvo para todo mundo que abrir este link.</p>
-    <div class="meta"><span>App Expo offline primeiro</span><span>Painel web</span><span>Supabase da Fazenda Mirai</span><span>Leite e corte</span><span>Android e iOS</span><span id="atualizado">Atualizado em 10/11/2026 às 21:22</span></div>
+    <div class="meta"><span>App Expo offline primeiro</span><span>Painel web</span><span>Supabase da Fazenda Mirai</span><span>Leite e corte</span><span>Android e iOS</span><span id="atualizado">Atualizado em 10/11/2026 às 21:27</span></div>
     <!-- O span#atualizado leva dia e hora da ultima atualizacao deste arquivo, no horario
          de Brasilia. Toda vez que este HTML mudar, esse carimbo muda junto, antes de
          republicar o artefato. -->
@@ -242,7 +242,7 @@ td.nos{background:color-mix(in srgb,var(--ouro) 10%,var(--card))}
     <div class="sec-cab">
       <p class="rot">O mercado</p>
       <h2>Contra quem a Miraí vira referência</h2>
-      <p>Pesquisa de 10/11/2026 em páginas oficiais, lojas de apps e imprensa do setor. Os preços quase nunca são públicos no Brasil. <b>Uma premissa caiu:</b> o Ideagri PRO de hoje anuncia zootecnia e financeiro (com NF-e e fluxo de caixa) integrados num só sistema. A diferença pode estar no plano contratado ou na profundidade da gestão (estoque, custo por atividade, lavoura não aparecem). Vale apontar o que falta no Ideagri de vocês.</p>
+      <p>Pesquisa de 10/11/2026 em páginas oficiais, lojas de apps e imprensa do setor. Os preços quase nunca são públicos no Brasil. <b>O Ideagri na prática:</b> ele anuncia zootecnia e financeiro integrados, mas quem o Daniel conhece usa só uma das pontas, ou a zootecnia ou a gestão. O nosso argumento é que as duas sejam usadas de verdade, porque o lançamento do campo já alimenta a gestão sozinho.</p>
     </div>
     <div class="tab-box">
       <table>
@@ -294,7 +294,7 @@ td.nos{background:color-mix(in srgb,var(--ouro) 10%,var(--card))}
       <div class="risco dec"><code>D2 · onda 6</code><b>O dia do corte</b><p>O Lovable continua sendo o sistema em uso até a carga final. Proposta: congelar por uma tarde, migrar, conferir e deixar o Lovable só para consulta por 30 dias.</p></div>
       <div class="risco dec"><code>D3 · onda 24</code><b>Nome e marca do produto</b><p>A Miraí é a fazenda. Para vender a outros fazendeiros, o produto talvez precise de nome próprio, com a Miraí como caso de uso.</p></div>
       <div class="risco dec"><code>D4 · onda 23</code><b>Contas das lojas e da Expo</b><p>Apple Developer (US$ 99 por ano), Google Play (US$ 25 uma vez) e conta Expo para os builds. As lojas pedem uma empresa ou pessoa responsável.</p></div>
-      <div class="risco ris"><code>R1 · ondas 20 e 21</code><b>Dados de terceiros sem licença</b><p>O CEPEA exige autorização para retransmitir preços, a B3 só via distribuidor, e Girolando e ABCZ não têm API. As planilhas do Casal da Pecuária, compradas para uso próprio, não podem ser copiadas para o produto: as fórmulas vêm da metodologia pública. Nada de raspagem: widget, licença ou parceria.</p></div>
+      <div class="risco ris"><code>R1 · ondas 20 e 21</code><b>Dados de terceiros sem licença</b><p>O CEPEA exige autorização para retransmitir preços, a B3 só via distribuidor, e as planilhas do Casal da Pecuária não podem ser copiadas para o produto. Para preços, nada de raspagem. Girolando e ABCZ não têm API: os agentes leem a consulta pública, devagar e sem burlar captcha, até o convênio sair, e um site que mude de layout para o agente até o leitor ser ajustado.</p></div>
       <div class="risco ris"><code>R2 · onda 11</code><b>Bastão RFID no iPhone</b><p>O Allflex RS420 é aparelho MFi; no iOS o fabricante costuma precisar cadastrar o nosso app na Apple. Falar cedo com Allflex e Datamars; plano B é o bastão em modo teclado.</p></div>
       <div class="risco ris"><code>R3 · onda 5</code><b>Mapa de satélite sem licença hoje</b><p>O mapa do Lovable usa as imagens da Esri direto, sem conta. Num produto vendido isso precisa de plano comercial (Mapbox, que também guarda o mapa para uso sem sinal).</p></div>
       <div class="risco ris"><code>R4 · todas</code><b>Escopo do tamanho de uma empresa</b><p>São 27 ondas. A ordem garante que a Miraí use o app de campo de verdade (fase 2) antes das integrações, e que cada onda deixe algo funcionando.</p></div>
@@ -609,17 +609,18 @@ const ONDAS = [
    ],
    pronto:"O painel mostra o preço do dia com fonte e licença, e a margem da fazenda contra ele."},
 
-  {n:21, t:"Genealogia e associações de raça", tags:[["banco","banco"],["painel","painel"],["voce","você contata"]],
-   por:"É o plano que ficou pela metade no Lovable. <em>Girolando e ABCZ não têm API publicada</em>, então o caminho começa por parceria formal; a consulta automática só entra se os termos permitirem.",
+  {n:21, t:"Dados das associações: ABCZ e Girolando no nosso banco", tags:[["banco","banco"],["painel","painel"],["app","app"]],
+   por:"Decisão do Daniel em 10/11/2026: puxar os registros zootécnicos públicos da ABCZ e da Girolando por agentes e <em>pré-salvar tudo no nosso banco</em>. Quando alguém consultar um animal, o sistema procura primeiro no que já tem e só vai ao site se faltar. Cada consulta enriquece a base para todas as fazendas; é o que nenhum concorrente faz. O convênio com as associações vem depois (o pai do Daniel preside a Girolando, e há contatos na ABCZ) e só troca a via de consulta.",
    itens:[
-     "Pedir à Girolando e à ABCZ um canal oficial (convênio ou API) e conferir os termos de uso da consulta",
-     "Consulta pelo RGD, pela via que as associações autorizarem",
-     "Quadro comparando o sistema com a associação, aplicando só o que o usuário marcar",
-     "Atualização em massa com fila de aprovação e relatório",
-     "Ancestrais fora do rebanho até os bisavós, na árvore e no parentesco",
-     "Sugestão de acasalamento: touro do estoque de sêmen com menor parentesco"
+     "Base compartilhada de registros das associações (animal, RGD, pais e avós, dados genéticos, situação do registro, fonte e data), separada do rebanho de cada fazenda e reaproveitada por todas",
+     "Consulta em cache: procurar primeiro na base; só sem registro, ou com registro velho, o agente vai ao site; guardar sempre a resposta original",
+     "Agente da Girolando (consulta pública sem captcha): busca pelo RGD, devagar, com intervalo entre consultas, e leitor da resposta com alerta quando o site mudar",
+     "Agente da ABCZ: busca pelo RGD; quando o site pedir captcha, a imagem vai para uma pessoa digitar (nada de resolver captcha por máquina), com fila de captchas para resolver vários de uma vez",
+     "Ao cadastrar ou importar um animal com RGD, a busca roda sozinha; quadro comparando o sistema com a associação, aplicando só o que o usuário aprovar, e atualização em massa com relatório",
+     "Ancestrais fora do rebanho até os bisavós na árvore e no parentesco, e sugestão de acasalamento com o touro do estoque de sêmen de menor parentesco",
+     "Convênio com a Girolando e a ABCZ para consulta oficial e sem captcha, quando sair (contatos do Daniel)"
    ],
-   pronto:"Os animais registrados da Miraí têm a genealogia conferida, e o sistema sugere o touro para cada vaca."},
+   pronto:"Consultar um animal registrado traz a genealogia na hora, da base ou do site, os 406 animais da Miraí estão conferidos, e a base já serve as próximas fazendas."},
 
   {n:22, t:"Assistente e alertas inteligentes", tags:[["app","app"],["painel","painel"]],
    por:"O sistema deve avisar antes de alguém perguntar. <em>Alerta calculado no servidor, notificação para quem precisa agir</em>, e uma pergunta em português quando a tela não basta.",

@@ -96,10 +96,17 @@ Ao aprovar o plano de ondas:
   pendências da importação da planilha, 2 usuários, nenhuma foto no bucket. Zero
   ordenhas, pesagens, tratamentos, lotes, tarefas, estoque e lançamentos financeiros.
   Por isso o app de campo é o centro do produto.
-- **O Ideagri separando zootecnia e gestão não se confirmou:** o Ideagri PRO atual
-  anuncia zootecnia e financeiro integrados. Falta perguntar ao Daniel o que ele sente
-  faltar. O espaço aberto que a pesquisa achou: ninguém junta leite e corte,
-  financeiro, estoque e lavoura com app offline para o peão.
+- **Ideagri:** ele anuncia zootecnia e financeiro integrados, mas o Daniel explicou em
+  10/11/2026 que quem ele conhece usa só uma das pontas. O argumento é que as duas
+  sejam usadas porque o campo alimenta a gestão sozinho. O espaço aberto que a
+  pesquisa achou: ninguém junta leite e corte, financeiro, estoque e lavoura com app
+  offline para o peão.
+- **ABCZ e Girolando (onda 21), decisão do Daniel em 10/11/2026:** agentes leem a
+  consulta pública e pré-salvam os registros numa base compartilhada do nosso banco;
+  a consulta olha primeiro a base e só vai ao site se faltar. Girolando sem captcha,
+  automática e devagar; na ABCZ o captcha vai para uma pessoa digitar (não resolver
+  captcha por máquina). O convênio vem depois e só troca a via: o pai do Daniel
+  preside a Girolando e há contatos na ABCZ.
 - **Offline: PowerSync** (onda 9). Exige development build (não roda no Expo Go) e
   replicação lógica no Postgres.
 - **Satélite: Sentinel-2** (gratuito, licença comercial com atribuição), processado
@@ -170,7 +177,7 @@ qualquer etapa.
 | 18 | Satélite e planejamento de plantio | Não iniciada |
 | 19 | Clima e conforto do gado | Não iniciada |
 | 20 | Preços do mercado | Não iniciada |
-| 21 | Genealogia e associações de raça | Não iniciada |
+| 21 | Dados das associações: ABCZ e Girolando no nosso banco | Não iniciada |
 | 22 | Assistente e alertas inteligentes | Não iniciada |
 | 23 | Pré-requisitos das lojas | Não iniciada |
 | 24 | Pronto para vender | Não iniciada |
