@@ -73,6 +73,16 @@ Ao aprovar o plano de ondas:
 - Leite e corte: "O app tem que servir tanto pra leite quanto pra corte". Este pedido
   chegou por uma sessão paralela do Daniel em 10/11/2026 e virou a onda 16 e itens nas
   ondas 3, 8, 10, 15, 20.
+- Planilhas do Casal da Pecuária (também pela sessão paralela, 10/11/2026): "Tem um
+  tal de casal de pecuaria que tem umas planilhas que podemos usar/jogar pra dentro do
+  sistema. Que é pra saber quanto custa pra engordar o gado". São 15 planilhas de
+  resultado e custo (R$ 97) e 3 de formulação (R$ 147), vendidas na Hotmart, sem
+  formato nem licença informados. Comprar para uso próprio não dá direito de copiar
+  para um produto vendido: as calculadoras usam fórmulas da metodologia pública
+  (Embrapa, CEPEA) e as planilhas servem de checklist e de conferência dos resultados.
+  Entraram nas ondas 8 (funções), 13 (importar o histórico), 16 (calculadoras e
+  formulação) e 24 (parceria como canal de venda, decisão do Daniel). Falta: os
+  arquivos, se a fazenda tiver comprado, para mapear campo a campo.
 
 ## Decisões e achados que não estão no código
 

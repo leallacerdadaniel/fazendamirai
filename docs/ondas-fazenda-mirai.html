@@ -190,7 +190,7 @@ td.nos{background:color-mix(in srgb,var(--ouro) 10%,var(--card))}
     </div>
     <h1>Do sistema da Miraí ao produto do agro</h1>
     <p class="lead">Vinte e sete ondas, na ordem em que as dependências mandam: primeiro trazer o que existe e pôr o dado real em casa própria, depois o app do campo que funciona sem sinal, o painel do escritório, a gestão junto da zootecnia, leite e corte, as integrações e, por fim, as lojas e a venda para outros fazendeiros. Marque as caixas conforme andar; o que você marcar fica salvo para todo mundo que abrir este link.</p>
-    <div class="meta"><span>App Expo offline primeiro</span><span>Painel web</span><span>Supabase da Fazenda Mirai</span><span>Leite e corte</span><span>Android e iOS</span><span id="atualizado">Atualizado em 10/11/2026 às 21:03</span></div>
+    <div class="meta"><span>App Expo offline primeiro</span><span>Painel web</span><span>Supabase da Fazenda Mirai</span><span>Leite e corte</span><span>Android e iOS</span><span id="atualizado">Atualizado em 10/11/2026 às 21:17</span></div>
     <!-- O span#atualizado leva dia e hora da ultima atualizacao deste arquivo, no horario
          de Brasilia. Toda vez que este HTML mudar, esse carimbo muda junto, antes de
          republicar o artefato. -->
@@ -294,7 +294,7 @@ td.nos{background:color-mix(in srgb,var(--ouro) 10%,var(--card))}
       <div class="risco dec"><code>D2 · onda 6</code><b>O dia do corte</b><p>O Lovable continua sendo o sistema em uso até a carga final. Proposta: congelar por uma tarde, migrar, conferir e deixar o Lovable só para consulta por 30 dias.</p></div>
       <div class="risco dec"><code>D3 · onda 24</code><b>Nome e marca do produto</b><p>A Miraí é a fazenda. Para vender a outros fazendeiros, o produto talvez precise de nome próprio, com a Miraí como caso de uso.</p></div>
       <div class="risco dec"><code>D4 · onda 23</code><b>Contas das lojas e da Expo</b><p>Apple Developer (US$ 99 por ano), Google Play (US$ 25 uma vez) e conta Expo para os builds. As lojas pedem uma empresa ou pessoa responsável.</p></div>
-      <div class="risco ris"><code>R1 · ondas 20 e 21</code><b>Dados de terceiros sem licença</b><p>O CEPEA exige autorização para retransmitir preços, a B3 só via distribuidor, e Girolando e ABCZ não têm API. Nada de raspagem: widget, licença ou parceria.</p></div>
+      <div class="risco ris"><code>R1 · ondas 20 e 21</code><b>Dados de terceiros sem licença</b><p>O CEPEA exige autorização para retransmitir preços, a B3 só via distribuidor, e Girolando e ABCZ não têm API. As planilhas do Casal da Pecuária, compradas para uso próprio, não podem ser copiadas para o produto: as fórmulas vêm da metodologia pública. Nada de raspagem: widget, licença ou parceria.</p></div>
       <div class="risco ris"><code>R2 · onda 11</code><b>Bastão RFID no iPhone</b><p>O Allflex RS420 é aparelho MFi; no iOS o fabricante costuma precisar cadastrar o nosso app na Apple. Falar cedo com Allflex e Datamars; plano B é o bastão em modo teclado.</p></div>
       <div class="risco ris"><code>R3 · onda 5</code><b>Mapa de satélite sem licença hoje</b><p>O mapa do Lovable usa as imagens da Esri direto, sem conta. Num produto vendido isso precisa de plano comercial (Mapbox, que também guarda o mapa para uso sem sinal).</p></div>
       <div class="risco ris"><code>R4 · todas</code><b>Escopo do tamanho de uma empresa</b><p>São 27 ondas. A ordem garante que a Miraí use o app de campo de verdade (fase 2) antes das integrações, e que cada onda deixe algo funcionando.</p></div>
@@ -313,7 +313,7 @@ td.nos{background:color-mix(in srgb,var(--ouro) 10%,var(--card))}
   <footer class="rodape">
     <p class="estado" id="estado-salvar"><i></i><span>Carregando…</span></p>
     <p><b>Como este plano foi montado.</b> O zip do Lovable foi lido em 31/10/2026 (33 telas, 54 tabelas, 3 funções de IA), o banco do Lovable foi contado tabela por tabela em 10/11/2026, e duas pesquisas rodaram em paralelo no mesmo dia: uma sobre os concorrentes e os padrões de usabilidade de campo e de escritório, outra sobre modo offline com Supabase, satélite, clima, preços, leitores de brinco e rastreabilidade. As fontes ficam registradas no repositório.</p>
-    <p><b>Pedidos do Daniel em 10/11/2026.</b> Dado real dos animais; app que funciona sem internet e sincroniza depois; banco na organização Fazenda Mirai do Supabase; app nas lojas e painel web; botões grandes para o peão; um produto que sirva à zootecnia e à gestão, a leite e a corte, e que possa ser vendido a outros fazendeiros; integrações de mapa, satélite, clima e preço da arroba.</p>
+    <p><b>Pedidos do Daniel em 10/11/2026.</b> Dado real dos animais; app que funciona sem internet e sincroniza depois; banco na organização Fazenda Mirai do Supabase; app nas lojas e painel web; botões grandes para o peão; um produto que sirva à zootecnia e à gestão, a leite e a corte, e que possa ser vendido a outros fazendeiros; integrações de mapa, satélite, clima e preço da arroba; as contas de engorda das planilhas do Casal da Pecuária dentro do sistema.</p>
     <p>Os preços de serviços citados vêm das páginas públicas dos fornecedores em 10/11/2026 e devem ser reconferidos na hora de contratar. As exigências das lojas devem ser reconferidas no portal da Apple e do Google antes do envio.</p>
   </footer>
 
@@ -444,7 +444,7 @@ const ONDAS = [
      "Pasto: lotação em UA por hectare e dias de ocupação e descanso por piquete",
      "Sanidade: carência de leite e de carne por medicamento, com bloqueio do leite e da venda do animal em carência",
      "Genealogia: árvore até os bisavós e coeficiente de parentesco",
-     "Custo do litro e da arroba produzida, estoque com custo médio e fechamento de sócios como funções puras, com testes usando casos reais da Miraí"
+     "Custo do litro e da arroba produzida, custo da diária, ágio diluído na compra, ponto de equilíbrio, relação de troca (bezerro e boi gordo), estoque com custo médio e fechamento de sócios como funções puras, com testes usando casos reais da Miraí"
    ],
    pronto:"App e painel mostram os mesmos números para os mesmos animais, e os testes do domínio passam."},
 
@@ -511,7 +511,7 @@ const ONDAS = [
      "Tabelas que se comportam como planilha: filtro salvo, edição na linha, colar em várias células, ação em lote e exportação para Excel",
      "Busca global (Ctrl+K) por animal, lote, medicamento, pessoa ou tela, com filtro por campo (brinco:2047) e a tecla ? listando os atalhos",
      "Cadastro rápido em gaveta lateral, sem sair da lista, e tarefa mandada do escritório para o campo, com o andamento à vista",
-     "Importar planilha em etapas: mapear as colunas, ver o erro de cada linha e corrigir ali mesmo, baixar as linhas recusadas",
+     "Importar planilha em etapas: mapear as colunas, ver o erro de cada linha e corrigir ali mesmo, baixar as linhas recusadas (inclusive o histórico das planilhas do Casal da Pecuária, para quem já as usa)",
      "Relatórios em PDF com a marca da fazenda",
      "Do computador ao celular: o painel também funciona na tela pequena"
    ],
@@ -546,10 +546,13 @@ const ONDAS = [
    pronto:"O custo do litro e da arroba do mês saem sozinhos dos lançamentos de campo e do financeiro, sem planilha."},
 
   {n:16, t:"Corte: do bezerro ao frigorífico", tags:[["app","app"],["painel","painel"],["banco","banco"]],
-   por:"Pedido do Daniel em 10/11/2026: “O app tem que servir tanto pra leite quanto pra corte”. <em>O argumento de venda é um sistema só para leite, corte e gestão.</em> As regras vêm da onda 8; aqui entram o manejo, os indicadores e a venda.",
+   por:"Pedido do Daniel em 10/11/2026: “O app tem que servir tanto pra leite quanto pra corte”. <em>O argumento de venda é um sistema só para leite, corte e gestão.</em> As regras vêm da onda 8; aqui entram o manejo, os indicadores, a venda e as contas que o pecuarista faz hoje em planilha, como as do Casal da Pecuária (“pra saber quanto custa pra engordar o gado”, nas palavras do Daniel).",
    itens:[
      "Fases do corte (cria, recria, engorda) com lotes que mudam de fase e de piquete",
      "Suplementação a pasto e no cocho, por lote, com consumo e custo",
+     "Calculadoras do pecuarista no painel e no app, preenchidas sozinhas com os dados reais da fazenda: custo da diária, custo da arroba produzida, ágio na compra, ponto de equilíbrio, relação de troca, lotação, quantidade de suplemento no cocho, custo de cerca e custo por funcionário",
+     "Formulação de ração, proteico energético e proteinado com custo, a partir dos ingredientes do estoque",
+     "Mapear as 15 planilhas do Casal da Pecuária campo a campo (com os arquivos que a fazenda tiver) e conferir que as calculadoras dão o mesmo resultado nos mesmos números, com fórmulas da metodologia pública (Embrapa, CEPEA)",
      "Indicadores de corte ao lado dos de leite: GMD por lote, arrobas por hectare por ano, desfrute, taxa de desmama, custo por arroba e resultado por lote",
      "Compra de animais para reposição, com peso de entrada, preço e GTA",
      "Venda para frigorífico: romaneio, peso vivo e de carcaça, rendimento, arroba negociada e desconto",
@@ -651,6 +654,7 @@ const ONDAS = [
      "Preço público por animal, sem surpresa na renovação (a maior queixa contra o Herdwatch), com assinatura e cobrança",
      "Painel da plataforma: clientes, uso, saúde da conta e suporte",
      "Fazendas de demonstração de leite e de corte para a venda",
+     "Canais de venda: decidir sobre parceria ou licença com o Casal da Pecuária, que fala com pecuaristas",
      "Página do produto"
    ],
    pronto:"Um fazendeiro de fora cria a conta, importa o rebanho e começa a usar sem falar com ninguém."},
