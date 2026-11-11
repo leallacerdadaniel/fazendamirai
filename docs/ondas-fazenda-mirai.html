@@ -1,0 +1,804 @@
+<title data-pg>Ondas da Fazenda Miraí</title>
+<meta data-pg name="claude:viewport-fit-sides" content="cover">
+<link data-pg rel="preconnect" href="https://fonts.googleapis.com">
+<link data-pg rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-pg rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700;800&family=Zilla+Slab:ital,wght@0,600;0,700;1,600&display=swap">
+<style data-pg>
+/* Plano de leitura: uma coluna larga, o topo com a marca da Miraí (azul-noite e ouro),
+   o diagnóstico do que existe, o mercado, os princípios e a trilha de ondas com caixas. */
+:root{
+  --noite:#0E2340; --noite-2:#24395A; --ouro:#C9A43F; --ouro-soft:#F5EDD3; --ouro-ink:#6E5512;
+  --pasto:#2F6B45; --pasto-soft:#DDEDE2; --brasa:#B23A2E; --brasa-soft:#F6E0DC; --ceu:#25618F; --ceu-soft:#DEEAF4;
+  --papel:#F1F2EF; --card:#FFFFFF; --ink:#13202F; --ink2:#5D6773; --ink3:#8E97A1; --line:#E1E4E2; --rail:#D5D9D7;
+  --sobre-noite:#F4EEDC;
+  --display:"Zilla Slab",Rockwell,"Roboto Slab",Georgia,serif;
+  --sans:"Source Sans 3","Segoe UI","Helvetica Neue",Arial,system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --papel:#0B1220; --card:#121C2C; --ink:#E8ECF1; --ink2:#A3ADB9; --ink3:#77828F; --line:#243246; --rail:#243246;
+    --noite:#1A2F4F; --noite-2:#BFCBDB; --ouro:#D9B653; --ouro-soft:#33290F; --ouro-ink:#E8CF83;
+    --pasto:#7FC497; --pasto-soft:#16291D; --brasa:#EC8F84; --brasa-soft:#3A1C19; --ceu:#8DBBE3; --ceu-soft:#15263A;
+    --sobre-noite:#F4EEDC; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --papel:#0B1220; --card:#121C2C; --ink:#E8ECF1; --ink2:#A3ADB9; --ink3:#77828F; --line:#243246; --rail:#243246;
+  --noite:#1A2F4F; --noite-2:#BFCBDB; --ouro:#D9B653; --ouro-soft:#33290F; --ouro-ink:#E8CF83;
+  --pasto:#7FC497; --pasto-soft:#16291D; --brasa:#EC8F84; --brasa-soft:#3A1C19; --ceu:#8DBBE3; --ceu-soft:#15263A;
+  --sobre-noite:#F4EEDC; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--papel);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+p,h1,h2,h3,h4,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:pointer}
+a{color:inherit}
+code{font-family:var(--mono);font-size:.86em}
+:focus-visible{outline:2.5px solid var(--ouro);outline-offset:2px;border-radius:4px}
+
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:clamp(28px,5vw,56px) 96px;display:grid;gap:clamp(36px,5vw,64px)}
+.wrap > *{min-width:0}
+
+/* ---------- topo ---------- */
+.brand{display:flex;align-items:center;gap:13px;margin-bottom:26px}
+.mark{width:46px;height:46px;border-radius:13px;background:#0E2340;display:grid;place-items:center;flex:none}
+.mark svg{width:30px;height:30px}
+.brand p{font-weight:800;font-size:16px;letter-spacing:-.01em;line-height:1.2}
+.brand p span{display:block;font-weight:500;font-size:13px;color:var(--ink2);letter-spacing:0}
+h1{font-family:var(--display);font-size:clamp(36px,5.8vw,62px);font-weight:700;letter-spacing:-.02em;line-height:1;max-width:17ch;text-wrap:balance}
+.lead{font-size:17.5px;color:var(--ink2);max-width:64ch;margin-top:18px}
+.meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+.meta span{font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:999px;border:1px solid var(--line);color:var(--ink2)}
+
+/* ---------- painel de progresso ---------- */
+.painel{background:#0E2340;color:var(--sobre-noite);border-radius:24px;padding:22px 22px 20px;display:grid;gap:16px}
+.painel-top{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:flex-end}
+.painel .rot{font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;opacity:.72;color:inherit}
+.painel .n{font-family:var(--display);font-size:clamp(34px,6vw,48px);font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.painel .n small{font-family:var(--sans);font-size:.42em;font-weight:700;opacity:.65;margin-left:6px}
+.barra{height:9px;border-radius:5px;background:rgba(255,255,255,.14);overflow:hidden}
+.barra i{display:block;height:100%;border-radius:5px;background:#C9A43F;transition:width .35s ease}
+.painel-rod{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13.5px;opacity:.88}
+.painel-rod b{font-weight:700;font-variant-numeric:tabular-nums}
+
+/* ---------- seções ---------- */
+.sec{display:grid;gap:22px}
+.sec-cab{display:grid;gap:7px}
+.rot{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+h2{font-family:var(--display);font-size:clamp(25px,3.2vw,33px);font-weight:700;letter-spacing:-.01em;line-height:1.1;text-wrap:balance}
+.sec-cab p{font-size:15.5px;color:var(--ink2);max-width:68ch}
+.sec-cab p b{color:var(--ink)}
+
+/* ---------- diagnóstico ---------- */
+.diag{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.dl{display:grid;grid-template-columns:1fr auto;gap:6px 12px;background:var(--card);padding:12px 15px;align-items:start}
+.dl b{font-size:14.5px;font-weight:700}
+.dl .num{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--ink2);font-variant-numeric:tabular-nums;grid-column:1/-1}
+.dl p{font-size:13.5px;color:var(--ink2);line-height:1.45;grid-column:1/-1}
+@media (min-width:760px){
+  .dl{grid-template-columns:170px 190px 92px 1fr;align-items:center;gap:14px}
+  .dl .num,.dl p{grid-column:auto}
+}
+.tag{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:800;padding:3px 9px;border-radius:999px;white-space:nowrap;justify-self:start}
+.tag.ok{background:var(--pasto-soft);color:var(--pasto)}
+.tag.meio{background:var(--ouro-soft);color:var(--ouro-ink)}
+.tag.nao{background:var(--brasa-soft);color:var(--brasa)}
+
+/* ---------- mercado (tabela) ---------- */
+.tab-box{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--ink2);background:var(--papel)}
+tr:last-child td{border-bottom:0}
+td b{font-weight:700}
+td.nos{background:color-mix(in srgb,var(--ouro) 10%,var(--card))}
+.sim{color:var(--pasto);font-weight:700}
+.nao-t{color:var(--brasa);font-weight:700}
+.parc{color:var(--ouro-ink);font-weight:700}
+
+/* ---------- princípios ---------- */
+.princ{display:grid;gap:12px}
+@media (min-width:720px){.princ{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.princ{grid-template-columns:1fr 1fr 1fr}}
+.pr{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 16px;display:grid;gap:7px;align-content:start}
+.pr .ico{width:34px;height:34px;border-radius:10px;background:var(--ouro-soft);color:var(--ouro-ink);display:grid;place-items:center}
+.pr .ico svg{width:19px;height:19px}
+.pr b{font-size:15.5px;font-weight:800;line-height:1.25}
+.pr p{font-size:13.5px;color:var(--ink2);line-height:1.5}
+.pr p em{font-style:normal;color:var(--ink);font-weight:600}
+
+/* ---------- decisões e riscos ---------- */
+.riscos{display:grid;gap:12px}
+@media (min-width:800px){.riscos{grid-template-columns:1fr 1fr}}
+.risco{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 16px;display:grid;gap:5px}
+.risco code{font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.02em;justify-self:start;padding:2px 7px;border-radius:6px}
+.risco.dec code{background:var(--ouro-soft);color:var(--ouro-ink)}
+.risco.ris code{background:var(--brasa-soft);color:var(--brasa)}
+.risco b{font-size:14.5px;font-weight:700;line-height:1.3}
+.risco p{font-size:13.5px;color:var(--ink2);line-height:1.45}
+
+/* ---------- trilha de ondas ---------- */
+.fase{display:grid;gap:4px;margin-top:10px}
+.fase:first-child{margin-top:0}
+.fase .rot{color:var(--ouro-ink)}
+.fase h3{font-family:var(--display);font-size:22px;font-weight:700;line-height:1.15}
+.fase p{font-size:14.5px;color:var(--ink2);max-width:68ch}
+.trilha{display:grid;gap:14px}
+.onda{background:var(--card);border-radius:20px;border:1px solid var(--line);overflow:hidden}
+.onda.feita{border-color:color-mix(in srgb,var(--pasto) 45%,var(--line))}
+.o-cab{display:grid;grid-template-columns:52px 1fr;gap:15px;padding:17px 18px 15px;align-items:start}
+.o-num{width:52px;height:52px;border-radius:16px;background:var(--papel);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--mono);font-size:19px;font-weight:600;color:var(--ink2);font-variant-numeric:tabular-nums}
+.onda.feita .o-num{background:var(--pasto);border-color:var(--pasto);color:#fff}
+.o-tit{display:grid;gap:7px;min-width:0}
+.o-tags{display:flex;flex-wrap:wrap;gap:6px}
+.pill{display:inline-flex;align-items:center;font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px;letter-spacing:.03em;text-transform:uppercase}
+.pill.banco{background:#0E2340;color:#E2C46E}
+.pill.app{background:var(--ouro-soft);color:var(--ouro-ink)}
+.pill.painel{background:var(--ceu-soft);color:var(--ceu)}
+.pill.infra{background:var(--pasto-soft);color:var(--pasto)}
+.pill.loja{background:var(--brasa-soft);color:var(--brasa)}
+.pill.voce{background:var(--papel);color:var(--ink2);border:1px solid var(--line)}
+.o-tit h3{font-size:19.5px;font-weight:800;letter-spacing:-.02em;line-height:1.2;text-wrap:balance}
+.o-por{font-size:14.5px;color:var(--ink2);line-height:1.5}
+.o-por em{font-style:normal;color:var(--ink);font-weight:600}
+.o-corpo{padding:0 18px 16px;display:grid;gap:14px}
+@media (min-width:720px){.o-corpo{padding-left:85px}}
+.itens{display:grid;gap:1px;background:var(--line);border-radius:13px;overflow:hidden;border:1px solid var(--line)}
+.item{display:grid;grid-template-columns:26px 1fr;gap:11px;background:var(--card);padding:10px 13px;align-items:start;cursor:pointer}
+.item:hover{background:color-mix(in srgb,var(--ouro) 7%,var(--card))}
+.item input,.fecha input{appearance:none;width:21px;height:21px;margin:1px 0 0;border-radius:7px;border:2px solid var(--ink3);background:var(--card);flex:none;cursor:pointer;position:relative;transition:background .15s,border-color .15s}
+.item input:checked,.fecha input:checked{background:var(--pasto);border-color:var(--pasto)}
+.item input:checked::after,.fecha input:checked::after{content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(43deg)}
+.item span{font-size:14.5px;line-height:1.45;min-width:0}
+.item input:checked + span{color:var(--ink3);text-decoration:line-through;text-decoration-thickness:1px}
+.item span code{background:var(--papel);padding:1px 5px;border-radius:5px;color:var(--ink2);overflow-wrap:anywhere}
+.item span b{font-weight:700}
+.pronto{display:grid;grid-template-columns:20px 1fr;gap:10px;background:var(--ouro-soft);border-radius:13px;padding:11px 14px}
+.pronto svg{width:20px;height:20px;color:var(--ouro-ink);margin-top:1px}
+.pronto p{font-size:13.5px;color:var(--ouro-ink);line-height:1.45}
+.pronto p b{font-weight:800}
+.o-pe{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding:11px 18px;background:var(--papel)}
+@media (min-width:720px){.o-pe{padding-left:85px}}
+.prog{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink2);font-variant-numeric:tabular-nums}
+.prog .mini{width:96px;height:6px;border-radius:3px;background:var(--rail);overflow:hidden}
+.prog .mini i{display:block;height:100%;background:var(--pasto);border-radius:3px;transition:width .3s ease}
+.fecha{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:700;cursor:pointer;user-select:none}
+.fecha input{width:22px;height:22px;margin:0}
+.fecha input:checked + span{color:var(--pasto)}
+@media (prefers-reduced-motion: reduce){.barra i,.prog .mini i,.item input,.fecha input{transition:none}}
+
+/* ---------- rodapé ---------- */
+.estado{font-size:12.5px;color:var(--ink3);display:flex;align-items:center;gap:7px}
+.estado i{width:7px;height:7px;border-radius:50%;background:var(--pasto);flex:none}
+.estado.off i{background:var(--ink3)}
+.rodape{border-top:1px solid var(--line);padding-top:22px;display:grid;gap:9px}
+.rodape p{font-size:13.5px;color:var(--ink2);line-height:1.55;max-width:76ch}
+.rodape b{color:var(--ink)}
+</style>
+<script data-pg id="estado" type="application/json">{"feitos":["w0-0","w0-1","w0-2","w0-3","w0-5"]}</script>
+
+<div data-pg class="wrap">
+
+  <header>
+    <div class="brand">
+      <div class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><path d="M5 25.5c3.4-4.6 7.6-12 10.4-17.4.6-1.1 1.9-.6 1.6.6-.9 3.6-2.2 8.2-2.7 10.9 2-3.6 4.6-8.1 6.6-10.4.8-.9 2-.3 1.7.9-.8 3.3-2 7.6-2.2 9.4-.2 1.6 1 1.7 2.4.4" stroke="#C9A43F" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <p>Fazenda Miraí<span>Plano de construção do sistema</span></p>
+    </div>
+    <h1>Do sistema da Miraí ao produto do agro</h1>
+    <p class="lead">Vinte e sete ondas, na ordem em que as dependências mandam: primeiro trazer o que existe e pôr o dado real em casa própria, depois o app do campo que funciona sem sinal, o painel do escritório, a gestão junto da zootecnia, leite e corte, as integrações e, por fim, as lojas e a venda para outros fazendeiros. Marque as caixas conforme andar; o que você marcar fica salvo para todo mundo que abrir este link.</p>
+    <div class="meta"><span>App Expo offline primeiro</span><span>Painel web</span><span>Supabase da Fazenda Mirai</span><span>Leite e corte</span><span>Android e iOS</span><span id="atualizado">Atualizado em 10/11/2026 às 21:03</span></div>
+    <!-- O span#atualizado leva dia e hora da ultima atualizacao deste arquivo, no horario
+         de Brasilia. Toda vez que este HTML mudar, esse carimbo muda junto, antes de
+         republicar o artefato. -->
+  </header>
+
+  <section class="painel" aria-label="Progresso geral">
+    <div class="painel-top">
+      <div>
+        <p class="rot">Ondas concluídas</p>
+        <p class="n" id="pg-ondas">0<small>de 27</small></p>
+      </div>
+      <div style="text-align:right">
+        <p class="rot">Tarefas</p>
+        <p class="n" id="pg-itens" style="font-size:30px">0<small>de 0</small></p>
+      </div>
+    </div>
+    <div class="barra"><i id="pg-barra" style="width:0%"></i></div>
+    <div class="painel-rod">
+      <span>Fase 1 · fundação e dado real em casa: <b>ondas 0 a 8</b></span>
+      <span>Fase 2 · o app do campo: <b>ondas 9 a 12</b></span>
+      <span>Fase 3 · painel, gestão, leite e corte: <b>ondas 13 a 16</b></span>
+      <span>Fase 4 · integrações do agro: <b>ondas 17 a 22</b></span>
+      <span>Fase 5 · lojas e venda: <b>ondas 23 a 26</b></span>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-cab">
+      <p class="rot">Ponto de partida</p>
+      <h2>O que existe hoje no sistema do Lovable</h2>
+      <p>Contagem feita no banco do Lovable em 10/11/2026, só leitura, tabela por tabela. O sistema é usado como <b>cadastro do rebanho e da reprodução</b>, que vieram da planilha da fazenda. O dia a dia (ordenha, pesagem, tratamento, tarefa, despesa) <b>nunca entrou</b>: as telas existem, mas ninguém do campo tem acesso e nada foi registrado nelas. É isso que o app de campo tem de resolver.</p>
+    </div>
+    <div class="diag">
+      <div class="dl"><b>Rebanho</b><span class="num">406 animais · 244 movimentações</span><span class="tag ok">Dado real</span><p>Cadastro vindo da planilha, com 358 pendências da importação ainda abertas (dado faltando ou divergente).</p></div>
+      <div class="dl"><b>Reprodução</b><span class="num">153 coberturas · 116 diagnósticos · 91 partos</span><span class="tag ok">Dado real</span><p>O módulo mais usado. Os vínculos de mãe, pai e cria são o que mais pede cuidado na migração.</p></div>
+      <div class="dl"><b>IATF e sêmen</b><span class="num">31 protocolos · 431 animais · 87 sêmen</span><span class="tag ok">Dado real</span><p>Protocolos e estoque de sêmen em uso. Estoque de embriões vazio.</p></div>
+      <div class="dl"><b>Sanidade</b><span class="num">220 vacinações · 0 tratamentos</span><span class="tag meio">Parcial</span><p>Campanhas de vacina lançadas; tratamento, mastite e carência nunca registrados.</p></div>
+      <div class="dl"><b>Produção de leite</b><span class="num">0 ordenhas · 0 controle leiteiro</span><span class="tag nao">Sem uso</span><p>O número mais importante de uma fazenda de leite não está no sistema.</p></div>
+      <div class="dl"><b>Pesagens e lotes</b><span class="num">0 pesagens · 0 lotes</span><span class="tag nao">Sem uso</span><p>Sem pesagem não há ganho de peso, e sem lote não há manejo em grupo.</p></div>
+      <div class="dl"><b>Nutrição e estoque</b><span class="num">0 dietas · 0 itens · 0 silos</span><span class="tag nao">Sem uso</span><p>Telas prontas, nenhum lançamento.</p></div>
+      <div class="dl"><b>Financeiro</b><span class="num">0 lançamentos</span><span class="tag nao">Sem uso</span><p>A gestão financeira acontece fora do sistema.</p></div>
+      <div class="dl"><b>Sócios e plantio</b><span class="num">2 grupos · 2 fechamentos · 2 plantios</span><span class="tag meio">Parcial</span><p>Gestão de sócios e orçamento de plantio começaram a ser usados em outubro.</p></div>
+      <div class="dl"><b>Genealogia nas associações</b><span class="num">0 consultas</span><span class="tag nao">Planejada</span><p>Plano do Lovable de 13/10/2026 para Girolando e ABCZ; a busca não foi feita.</p></div>
+      <div class="dl"><b>Pessoas e fotos</b><span class="num">2 usuários · 0 fotos</span><span class="tag meio">Mínimo</span><p>Só o escritório entra. As 7 fotos da fazenda moram no armazenamento do Lovable e não abrem fora dele.</p></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-cab">
+      <p class="rot">O mercado</p>
+      <h2>Contra quem a Miraí vira referência</h2>
+      <p>Pesquisa de 10/11/2026 em páginas oficiais, lojas de apps e imprensa do setor. Os preços quase nunca são públicos no Brasil. <b>Uma premissa caiu:</b> o Ideagri PRO de hoje anuncia zootecnia e financeiro (com NF-e e fluxo de caixa) integrados num só sistema. A diferença pode estar no plano contratado ou na profundidade da gestão (estoque, custo por atividade, lavoura não aparecem). Vale apontar o que falta no Ideagri de vocês.</p>
+    </div>
+    <div class="tab-box">
+      <table>
+        <thead><tr><th>Produto</th><th>Foco</th><th>Rebanho e reprodução</th><th>Financeiro e estoque</th><th>App de campo sem sinal</th><th>Bastão e balança</th><th>Preço público</th></tr></thead>
+        <tbody>
+          <tr><td><b>Ideagri PRO</b> (Rúmina)</td><td>Leite, mais de 3 mil fazendas</td><td class="sim">Sim</td><td class="parc">Financeiro e NF-e; estoque e custo por atividade não aparecem</td><td class="parc">Sim, segundo o fabricante; avaliações citam app que não carrega</td><td class="sim">Sim</td><td class="nao-t">Não (imprensa: cerca de R$ 800/mês)</td></tr>
+          <tr><td><b>Jetbov</b></td><td>Corte, 4 mil propriedades</td><td class="sim">Sim</td><td class="parc">Só nos planos mais altos</td><td class="sim">Sim (apps Pasto e Curral)</td><td class="sim">Sim</td><td class="parc">A partir de R$ 99,90/mês (mar/2025)</td></tr>
+          <tr><td><b>iRancho</b></td><td>Corte</td><td class="sim">Sim, com SISBOV</td><td class="sim">Sim, o manejo baixa o estoque</td><td class="sim">Sim, voz sem sinal em validação</td><td class="sim">Sim</td><td class="nao-t">Não</td></tr>
+          <tr><td><b>FarmTell</b> (ex-Prodap)</td><td>Corte e leite, nutrição</td><td class="parc">Por lote</td><td class="parc">Custo de cocho</td><td class="nao-t">Não informado</td><td class="nao-t">Não informado</td><td class="nao-t">Não</td></tr>
+          <tr><td><b>DairyComp 305</b> (VAS)</td><td>Leite, rebanhos grandes</td><td class="sim">Sim</td><td class="nao-t">Não</td><td class="parc">Parcial</td><td class="sim">Sim</td><td class="nao-t">Não</td></tr>
+          <tr><td><b>Herdwatch</b> (Irlanda)</td><td>Corte e leite, 20 mil produtores</td><td class="sim">Sim, com carência</td><td class="nao-t">Não aparece</td><td class="sim">Sim</td><td class="sim">5 marcas de bastão</td><td class="sim">A partir de € 79 por usuário/ano</td></tr>
+          <tr><td><b>AgriWebb</b> (Austrália)</td><td>Corte a pasto</td><td class="sim">Sim, com mapa</td><td class="parc">Custo de produção</td><td class="sim">Totalmente</td><td class="parc">Não verificado</td><td class="nao-t">Sob consulta</td></tr>
+          <tr><td><b>Aegro</b></td><td>Lavoura</td><td class="parc">Só como adicional</td><td class="sim">Sim</td><td class="sim">Sim</td><td class="nao-t">Não</td><td class="nao-t">Não</td></tr>
+          <tr><td class="nos"><b>Onde queremos chegar</b></td><td class="nos">Leite e corte, de uma a muitas fazendas</td><td class="nos sim">Sim (ondas 8, 10, 16)</td><td class="nos sim">Sim, ligado ao campo (onda 15)</td><td class="nos sim">Sim (onda 9)</td><td class="nos sim">Sim (onda 11)</td><td class="nos sim">Sim, por animal (onda 24)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="princ">
+      <div class="pr"><b>O espaço aberto</b><p>Não achamos quem junte <em>leite e corte, financeiro, estoque e lavoura de volumoso</em> com um app sem sinal para o peão. No corte os apps de campo são mais modernos; no leite o Ideagri domina; os de lavoura tratam a pecuária como acessório.</p></div>
+      <div class="pr"><b>O que copiar no campo</b><p>Começar pelo animal (bastão ou teclado grande), <em>lista de trabalho do dia</em> no lugar de menu, voz que preenche e tela que confirma, e o estado de cada registro com os sinais do WhatsApp, que o peão já conhece.</p></div>
+      <div class="pr"><b>O que copiar no escritório</b><p>Busca global com Ctrl+K e filtro por campo (como Linear e Stripe), <em>tabela que se comporta como planilha</em> (como Airtable), importação em etapas com o erro de cada linha, e painel que abre pelos animais que pedem atenção.</p></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-cab">
+      <p class="rot">Como vamos construir</p>
+      <h2>Seis princípios que decidem as dúvidas</h2>
+      <p>Quando uma onda tiver duas saídas, vale a que respeita estes princípios. Eles vêm do pedido do Daniel em 10/11/2026 e da pesquisa de mercado e de usabilidade.</p>
+    </div>
+    <div class="princ">
+      <div class="pr"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v5M14 10V4a2 2 0 0 0-4 0v6M10 10.5V6a2 2 0 0 0-4 0v8a8 8 0 0 0 16 0v-3a2 2 0 0 0-4 0"/></svg></span><b>Feito para o curral</b><p>Quem usa o app é o peão, de luva, no sol, com pressa. <em>Botão de pelo menos 56 dp</em>, ícone sempre com palavra, uma tarefa por tela, registrar em até três toques, número do brinco em letra grande.</p></div>
+      <div class="pr"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2l20 20M8.5 16.4a5 5 0 0 1 7 0M5 12.9a10 10 0 0 1 5.2-2.8M19 12.9a10 10 0 0 0-2-1.6M2 8.8a15 15 0 0 1 4.2-2.7M22 8.8a15 15 0 0 0-11.3-3.8M12 20h.01"/></svg></span><b>Sem sinal, sem problema</b><p>Tudo é gravado primeiro no celular e sobe sozinho quando aparecer rede. O peão <em>não precisa saber</em> se está online; só vê "tudo enviado" ou quantos registros esperam sinal.</p></div>
+      <div class="pr"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M9 9v9M8 21h8"/></svg></span><b>Escritório rápido</b><p>No painel, o gestor vive em tabelas: <em>filtro salvo, edição na própria linha, ação em lote, busca global por Ctrl+K</em>, gráfico com a lista por trás de cada número.</p></div>
+      <div class="pr"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11M4 12h7M4 17h11M15 12h5M17.5 9.5 20 12l-2.5 2.5"/></svg></span><b>Zootecnia e gestão juntas</b><p>O tratamento que o peão lança <em>baixa o estoque, vira custo do animal e entra no financeiro</em>. Nada de dois sistemas que não conversam.</p></div>
+      <div class="pr"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8h14M7 8l-3 7a3 3 0 0 0 6 0zM17 8l-3 7a3 3 0 0 0 6 0z"/></svg></span><b>Leite e corte, a mesma régua</b><p>A fazenda diz o que faz (leite, cria, recria, engorda) e os módulos se ajustam. <em>A mesma regra de cálculo</em> roda no app, no painel e no servidor, inclusive sem internet.</p></div>
+      <div class="pr"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg></span><b>Muitas fazendas desde o começo</b><p>Cada dado sabe de que fazenda é, e cada pessoa só vê o que o papel dela permite. <em>A Miraí é a primeira cliente e a vitrine</em> do produto.</p></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-cab">
+      <p class="rot">Antes de começar</p>
+      <h2>Decisões suas e riscos conhecidos</h2>
+      <p>As decisões entram nas ondas marcadas com "você decide". Os riscos têm onda dona.</p>
+    </div>
+    <div class="riscos">
+      <div class="risco dec"><code>D1 · onda 4</code><b>Supabase no plano Pro antes do dado real</b><p>A organização Fazenda Mirai está no plano gratuito, que pausa o projeto parado e não tem backup diário. O Pro custa US$ 25 por mês por organização.</p></div>
+      <div class="risco dec"><code>D2 · onda 6</code><b>O dia do corte</b><p>O Lovable continua sendo o sistema em uso até a carga final. Proposta: congelar por uma tarde, migrar, conferir e deixar o Lovable só para consulta por 30 dias.</p></div>
+      <div class="risco dec"><code>D3 · onda 24</code><b>Nome e marca do produto</b><p>A Miraí é a fazenda. Para vender a outros fazendeiros, o produto talvez precise de nome próprio, com a Miraí como caso de uso.</p></div>
+      <div class="risco dec"><code>D4 · onda 23</code><b>Contas das lojas e da Expo</b><p>Apple Developer (US$ 99 por ano), Google Play (US$ 25 uma vez) e conta Expo para os builds. As lojas pedem uma empresa ou pessoa responsável.</p></div>
+      <div class="risco ris"><code>R1 · ondas 20 e 21</code><b>Dados de terceiros sem licença</b><p>O CEPEA exige autorização para retransmitir preços, a B3 só via distribuidor, e Girolando e ABCZ não têm API. Nada de raspagem: widget, licença ou parceria.</p></div>
+      <div class="risco ris"><code>R2 · onda 11</code><b>Bastão RFID no iPhone</b><p>O Allflex RS420 é aparelho MFi; no iOS o fabricante costuma precisar cadastrar o nosso app na Apple. Falar cedo com Allflex e Datamars; plano B é o bastão em modo teclado.</p></div>
+      <div class="risco ris"><code>R3 · onda 5</code><b>Mapa de satélite sem licença hoje</b><p>O mapa do Lovable usa as imagens da Esri direto, sem conta. Num produto vendido isso precisa de plano comercial (Mapbox, que também guarda o mapa para uso sem sinal).</p></div>
+      <div class="risco ris"><code>R4 · todas</code><b>Escopo do tamanho de uma empresa</b><p>São 27 ondas. A ordem garante que a Miraí use o app de campo de verdade (fase 2) antes das integrações, e que cada onda deixe algo funcionando.</p></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-cab">
+      <p class="rot">O caminho</p>
+      <h2>As 27 ondas</h2>
+      <p>Cada onda tem o que fazer, por que agora e como saber que terminou. As estimativas não estão aqui de propósito: o tamanho de cada onda fica claro quando ela começa, com o plano detalhado registrado no repositório.</p>
+    </div>
+    <div class="trilha" id="trilha"></div>
+  </section>
+
+  <footer class="rodape">
+    <p class="estado" id="estado-salvar"><i></i><span>Carregando…</span></p>
+    <p><b>Como este plano foi montado.</b> O zip do Lovable foi lido em 31/10/2026 (33 telas, 54 tabelas, 3 funções de IA), o banco do Lovable foi contado tabela por tabela em 10/11/2026, e duas pesquisas rodaram em paralelo no mesmo dia: uma sobre os concorrentes e os padrões de usabilidade de campo e de escritório, outra sobre modo offline com Supabase, satélite, clima, preços, leitores de brinco e rastreabilidade. As fontes ficam registradas no repositório.</p>
+    <p><b>Pedidos do Daniel em 10/11/2026.</b> Dado real dos animais; app que funciona sem internet e sincroniza depois; banco na organização Fazenda Mirai do Supabase; app nas lojas e painel web; botões grandes para o peão; um produto que sirva à zootecnia e à gestão, a leite e a corte, e que possa ser vendido a outros fazendeiros; integrações de mapa, satélite, clima e preço da arroba.</p>
+    <p>Os preços de serviços citados vêm das páginas públicas dos fornecedores em 10/11/2026 e devem ser reconferidos na hora de contratar. As exigências das lojas devem ser reconferidas no portal da Apple e do Google antes do envio.</p>
+  </footer>
+
+</div>
+
+<script data-pg>
+const FASES = {
+  0: ["Fase 1", "Fundação e dado real em casa", "Trazer o que existe, montar o banco próprio já pensado para muitas fazendas, mudar o dado real e cortar o Lovable. No fim da fase a Miraí trabalha no sistema novo."],
+  9: ["Fase 2", "O app do campo", "O app que o peão usa sem sinal, com botões grandes, leitor de brinco e balança. No fim da fase a Miraí registra o dia a dia pelo celular."],
+  13: ["Fase 3", "Painel, gestão, leite e corte", "O painel do escritório, tudo o que o Lovable fazia, a gestão ligada à zootecnia e o corte do bezerro ao frigorífico."],
+  17: ["Fase 4", "Integrações do agro", "Mapa e GPS, satélite e plantio, clima, preços, associações de raça e um assistente que responde em português."],
+  23: ["Fase 5", "Lojas e venda", "O que as lojas pedem, o que um fazendeiro de fora precisa para entrar sozinho, a publicação e a operação."]
+};
+
+const ONDAS = [
+  {n:0, t:"Trazer o projeto para casa", tags:[["infra","infra"],["voce","em andamento"]],
+   por:"Pegar o zip do Lovable, versionar, provar que compila e inventariar tudo o que existe. <em>É a base de todas as outras ondas</em>: o que não está inventariado se perde no caminho.",
+   itens:[
+     "Extrair o zip do Lovable e versionar no Git, com o <code>.env</code> fora do repositório <em>(feito em 31/10/2026)</em>",
+     "Conferir que o projeto compila: build, checagem de tipos e os 9 testes <em>(feito em 31/10/2026)</em>",
+     "Inventário: 33 telas, 54 tabelas, 3 funções de IA e os laços com o Lovable, registrado no <code>CLAUDE.md</code> <em>(feito em 31/10/2026)</em>",
+     "Medir o dado real no banco do Lovable, tabela por tabela <em>(feito em 10/11/2026)</em>",
+     "Ligar ao repositório <code>leallacerdadaniel/fazendamirai</code> e subir o histórico <em>(ligado em 10/11/2026; o envio espera o seu ok)</em>",
+     "Publicar este plano de ondas <em>(feito em 10/11/2026)</em>",
+     "Confirmar as regras da casa herdadas do Café com Crédito: ícone em vez de emoji, sem travessão, envio ao GitHub só com pedido"
+   ],
+   pronto:"O código está no GitHub, compila na máquina, e tudo o que existe está inventariado."},
+
+  {n:1, t:"Seu ambiente no Mac", tags:[["voce","você faz"],["infra","infra"]],
+   por:"Te dá autonomia para ver o app no simulador do iPhone, no emulador Android e no seu celular, e para rodar o banco na máquina antes de tocar em produção. <em>No Mac dá para compilar o iOS localmente</em>, o que o Café com Crédito não tinha.",
+   itens:[
+     "Node LTS e pnpm pelo corepack",
+     "Docker (Docker Desktop ou OrbStack) e Supabase CLI, com <code>supabase start</code> subindo o banco local",
+     "Xcode com o simulador do iPhone e as ferramentas de linha de comando",
+     "Android Studio com SDK, JDK 17 e um emulador",
+     "Expo Go e um development build de teste abrindo no seu celular",
+     "Conta Expo criada e logada na máquina, para os builds na nuvem (EAS)",
+     "O painel atual rodando local contra o banco do Lovable, para comparar lado a lado durante as ondas"
+   ],
+   pronto:"Um app Expo em branco abre no simulador do iPhone, no emulador Android e no seu celular, com recarga automática ao salvar."},
+
+  {n:2, t:"Um repositório, duas pontas e o jeito Miraí de desenhar", tags:[["infra","infra"],["app","app"],["painel","painel"]],
+   por:"O app do campo e o painel do escritório saem do mesmo repositório e usam os mesmos pacotes de regra, de dados e de identidade. <em>O guia de design sai da pesquisa</em>: o que os melhores sistemas fazem para o peão e para o gestor.",
+   itens:[
+     "Monorepo pnpm: <code>apps/painel</code> (o código do Lovable, movido sem quebrar), <code>apps/app</code> (Expo), <code>packages/dominio</code>, <code>packages/dados</code> e <code>packages/design</code>",
+     "<code>packages/design</code>: cores, fontes, raios e espaçamentos da marca (azul-noite e ouro), lidos pelas duas pontas; nenhuma tela usa cor direta",
+     "Guia do campo: alvo de toque de 56 dp (botão principal de 64 dp), ícone com palavra, uma tarefa por tela, contraste para sol forte, cor sempre acompanhada de forma ou palavra",
+     "Guia do escritório: tabela densa com filtro salvo, edição na linha, ação em lote, busca global (Ctrl+K), cadastro em gaveta lateral, atalhos de teclado",
+     "Componentes do app: botão grande, cartão de animal, teclado numérico grande, seletor de animal, confirmação de gravado",
+     "Componentes do painel: tabela, gráfico com a lista por trás, formulário em gaveta, filtro e busca",
+     "App Expo de pé com a identidade e a navegação por módulo, no simulador e no celular",
+     "CI no GitHub: checagem de tipos, testes e build das duas pontas a cada envio"
+   ],
+   pronto:"App e painel saem do mesmo repositório com a mesma identidade, e a CI passa verde."},
+
+  {n:3, t:"Muitas fazendas, leite e corte no mesmo banco", tags:[["banco","banco"],["voce","você decide"]],
+   por:"Para virar produto, cada linha precisa saber de que fazenda é, e cada fazenda precisa dizer o que faz. O Lovable foi feito para uma fazenda só e só de leite: <em>nenhuma das 54 tabelas tem dono</em>. Desenhar isso antes de migrar o dado real custa uma fração do que custaria depois.",
+   itens:[
+     "Modelo: <code>organizacoes</code> (o cliente que paga), <code>fazendas</code> (uma organização pode ter várias) e <code>membros</code> com papel por fazenda",
+     "Atividades da fazenda: leite, corte (cria, recria, engorda) ou as duas; os módulos aparecem ou somem conforme a atividade",
+     "No animal: finalidade (leite, corte) e categoria (vaca em lactação, seca, novilha, bezerro, garrote, boi, matriz de cria), com a passagem de categoria pela idade e pelos eventos",
+     "Papéis do produto e a matriz do que cada um lê e grava: dono, gestor, veterinário ou técnico, colaborador de campo, consulta (sócio, contador)",
+     "<code>fazenda_id</code> em todas as tabelas, com políticas de acesso (RLS) por membro da fazenda no lugar de “qualquer usuário logado vê tudo”",
+     "Troca de fazenda no app e no painel para quem atende mais de uma (consultor, veterinário)",
+     "Prova: usuários de duas fazendas de teste não enxergam nem gravam nada um do outro"
+   ],
+   pronto:"Uma fazenda de corte de teste convive com a Miraí no mesmo banco, cada uma vê só os seus módulos e os seus dados, e a prova de isolamento passa."},
+
+  {n:4, t:"O banco novo no Supabase da Fazenda Mirai", tags:[["banco","banco"],["infra","infra"],["voce","você decide"]],
+   por:"Projeto <code>vkwpqjfceeqdlfwtnxof</code>, em São Paulo, Postgres 17, criado em 10/11/2026. O esquema real tem de sair do banco do Lovable, porque as migrations estão em dois lugares e nenhum dos dois recria o banco. <em>Lição do Café com Crédito</em>: o Lovable Cloud não entrega a senha do banco; o caminho é a exportação oficial restaurada num Postgres descartável.",
+   itens:[
+     "Extrair o esquema real (exportação oficial restaurada na máquina) e comparar com as 8 migrations do Supabase e as 6 do Drizzle",
+     "Uma pasta só de migrations em <code>supabase/migrations</code>; o Drizzle sai, e o modelo de muitas fazendas da onda 3 entra",
+     "Revisar no caminho: tipos de data e dinheiro, chaves estrangeiras, índices das consultas mais usadas, número eletrônico ISO de 15 dígitos no animal (identificação individual obrigatória até 2033)",
+     "Aplicar no projeto novo com buckets (fotos dos animais, documentos), funções e Auth (convite, troca de senha)",
+     "Homologação separada da produção, para ensaiar migração sem risco",
+     "Tipos TypeScript do banco novo em <code>packages/dados</code> e o painel apontado para ele",
+     "Organização no plano Pro antes de receber dado real <em>(decisão D1)</em>"
+   ],
+   pronto:"O painel atual roda contra o banco novo, vazio, sem um erro, e a homologação existe separada."},
+
+  {n:5, t:"Cortar o cordão com o Lovable", tags:[["infra","infra"],["painel","painel"]],
+   por:"Tudo o que só funciona dentro do Lovable sai, para que o painel rode no endereço próprio. <em>São poucos laços</em>, mas cada um derruba uma função se ficar para trás.",
+   itens:[
+     "Camada de IA própria (provedor, chave e modelo em variáveis de ambiente) no lugar do gateway do Lovable",
+     "<code>identify-animal</code> (animal por foto), <code>scan-invoice</code> (nota fiscal) e <code>suggest-animal-names</code> reescritas sobre a camada e publicadas no projeto novo",
+     "Sair <code>previewAuthStorage</code>, <code>lovable-tagger</code> e os arquivos de plano e instruções do Lovable",
+     "As 7 fotos da fazenda do armazenamento do Lovable para o Storage próprio",
+     "Mapa base de satélite com plano comercial (Mapbox) no lugar das imagens da Esri usadas sem conta",
+     "Painel hospedado (Cloudflare Pages, como no Café com Crédito) com domínio próprio e publicação pela CI",
+     "Variáveis e segredos documentados num lugar só (<code>.env.example</code> e o painel do Supabase)"
+   ],
+   pronto:"Uma busca por “lovable” no repositório não acha nada que rode, e o painel está no ar no endereço próprio."},
+
+  {n:6, t:"Os dados reais e o dia do corte", tags:[["banco","banco"],["voce","você confere"]],
+   por:"Aqui o dado é real: 406 animais, 153 coberturas, 116 diagnósticos, 91 partos, 220 vacinações, 87 sêmen, 31 protocolos, a gestão de sócios e o plantio. <em>O volume é pequeno, o cuidado é com os vínculos</em> (mãe, pai, cria, protocolo, grupo de sócios).",
+   itens:[
+     "Script de migração repetível, tabela por tabela, carimbando a Fazenda Miraí, a finalidade leite e a categoria de cada animal",
+     "Resolver com o Daniel as 358 pendências da importação da planilha antes da carga final",
+     "Ensaio na homologação com conferência automática: contagem por tabela, vínculos da genealogia, somas do fechamento de sócios",
+     "As 2 contas de hoje convidadas de novo no Auth novo (senha não migra), com o papel certo",
+     "Corte: congelar o Lovable por uma tarde, rodar a carga final em produção e conferir <em>(decisão D2)</em>",
+     "Conferência sua: 10 animais escolhidos por você, lado a lado nos dois sistemas",
+     "Lovable só para consulta por 30 dias depois do corte"
+   ],
+   pronto:"Contagens e vínculos batem com os do Lovable, você confere os 10 animais, e a fazenda passa a trabalhar no sistema novo."},
+
+  {n:7, t:"Segurança de produto", tags:[["banco","banco"]],
+   por:"Vender para muitos fazendeiros exige provar que o dado de um não vaza para o outro e que cada pessoa só faz o que o papel permite. <em>O peão registra ordenha e tratamento, mas não apaga animal nem vê o financeiro.</em>",
+   itens:[
+     "RLS revisada tabela por tabela contra a matriz de papéis da onda 3",
+     "Trilha de auditoria: quem criou, mudou ou apagou cada registro, quando e de qual aparelho",
+     "Arquivar no lugar de apagar onde o histórico importa (animal vendido ou morto continua na genealogia)",
+     "Contas de dinheiro (fechamento de sócios, custo, venda) calculadas no servidor",
+     "Funções do servidor conferem o papel antes de agir; IA com cota por fazenda",
+     "Sessão com validade e entrada do peão por PIN no aparelho da fazenda (desenho na onda 10)",
+     "Prova de ponta a ponta escrita como um usuário mal-intencionado, rodada a cada mudança de banco"
+   ],
+   pronto:"A prova de isolamento e de papéis passa inteira na homologação e em produção."},
+
+  {n:8, t:"As regras do gado num pacote só: leite e corte", tags:[["banco","domínio"],["app","app"],["painel","painel"]],
+   por:"Hoje as contas estão espalhadas dentro das telas. O app e o painel precisam dar a mesma resposta, <em>inclusive sem internet</em>, então a regra vai para <code>packages/dominio</code>, sem React e sem tela, com testes.",
+   itens:[
+     "Reprodução: dias em lactação, período de serviço, intervalo entre partos, taxa de prenhez e de concepção, previsão de parto e de secagem",
+     "IATF: calendário do protocolo (D0, D8, D9, D10) e as tarefas que ele gera por animal",
+     "Leite: produção por vaca e por lote, lactação acumulada e projetada para 305 dias, pico e persistência",
+     "Corte: ganho médio diário (GMD), projeção do peso de abate, desmama ajustada aos 205 dias, rendimento de carcaça e conversão em arroba (15 kg de carcaça)",
+     "Pasto: lotação em UA por hectare e dias de ocupação e descanso por piquete",
+     "Sanidade: carência de leite e de carne por medicamento, com bloqueio do leite e da venda do animal em carência",
+     "Genealogia: árvore até os bisavós e coeficiente de parentesco",
+     "Custo do litro e da arroba produzida, estoque com custo médio e fechamento de sócios como funções puras, com testes usando casos reais da Miraí"
+   ],
+   pronto:"App e painel mostram os mesmos números para os mesmos animais, e os testes do domínio passam."},
+
+  {n:9, t:"Funcionar sem internet", tags:[["app","app"],["banco","banco"]],
+   por:"Muita fazenda não tem sinal no curral nem no pasto. O app grava tudo no celular e manda quando acha rede, sem o peão precisar saber. <em>Escolha da pesquisa: PowerSync</em>, o único com integração oficial e madura com Supabase, o mesmo banco local no app e no painel, as regras de acesso valendo nas gravações, e versão auto-hospedada para não ficar preso ao fornecedor.",
+   itens:[
+     "Prova de conceito do PowerSync com o Supabase: replicação lógica ligada, regras de sincronização por fazenda a partir do login, gravação passando pelas regras de acesso",
+     "Banco local (SQLite) no celular com o rebanho da fazenda, lotes, medicamentos, tarefas e o mapa",
+     "Toda gravação vai primeiro para o celular e entra numa fila, que sobe sozinha quando volta a rede",
+     "Regra de conflito clara (vale o registro de campo mais recente; o que o servidor recusar volta para o celular com aviso, não some)",
+     "Estado de cada registro com os sinais que o peão já conhece do WhatsApp (relógio: só no celular; tique: enviado) e um aviso no topo: “Tudo enviado” ou “3 registros esperando sinal”",
+     "Fotos guardadas no celular e enviadas depois, comprimidas",
+     "Decidir entre a nuvem do PowerSync (a partir de US$ 49 por mês) e a versão auto-hospedada",
+     "Prova com o modo avião: um dia de trabalho sem rede chega inteiro ao painel quando a rede volta, sem perder e sem duplicar"
+   ],
+   pronto:"Com o celular em modo avião o dia inteiro, nada se perde e nada duplica quando ele volta a ter sinal."},
+
+  {n:10, t:"O app do peão", tags:[["app","app"]],
+   por:"O sistema de hoje nunca recebeu uma ordenha, uma pesagem ou um tratamento. O app é feito para quem está no curral: <em>poucos toques, botões grandes, linguagem do campo</em>.",
+   itens:[
+     "Entrada simples: o aparelho da fazenda fica logado e cada peão entra com PIN de 4 dígitos e a própria foto",
+     "Lista de trabalho do dia em cartões grandes, mandada pelo escritório (vacinar o lote 3, IATF de 12 vacas, secar a 2047, pesar o lote da recria), no lugar de um menu",
+     "Grade fixa com os lançamentos mais usados, configurada pelo gestor e igual em todos os aparelhos",
+     "Achar o animal pelo número do brinco num teclado numérico grande (com busca que tolera erro), pelo brinco eletrônico ou pela foto",
+     "Registrar em até 3 toques: ordenha, pesagem, cio e cobertura, parto com cria, tratamento e vacina, mudança de lote, morte",
+     "Manejo em lote: pesar, vacinar ou mudar de piquete o lote inteiro em sequência, e apartar",
+     "Entrada e saída de animais: nascimento, compra, venda e morte, com o número da GTA",
+     "Ficha de campo do animal: foto, número grande, situação (prenhe, em lactação, em carência) com cor e palavra; palavras do curral (vaca vazia, secar, pariu) em vez de termo técnico",
+     "Voz como atalho: o peão fala, a tela mostra com ícone e foto o que entendeu, e ele confirma (num estudo com pessoas de baixa alfabetização, a voz sozinha completou 72% das tarefas e a tela com ícones, 100%)",
+     "Foto em qualquer registro, e confirmação clara de que gravou, com desfazer por alguns segundos"
+   ],
+   pronto:"Um peão que nunca viu o app registra uma ordenha, uma vacina, um parto e a pesagem de um lote sozinho, na primeira tentativa."},
+
+  {n:11, t:"Brinco eletrônico, balança e câmera", tags:[["app","app"],["voce","você contata"]],
+   por:"Digitar número é onde o campo erra. <em>Ler o brinco e puxar o peso da balança</em> tira o erro e o tempo, e no corte a pesagem é a tarefa central.",
+   itens:[
+     "Falar com Allflex e Datamars sobre o protocolo do bastão e o cadastro do app na Apple (o RS420 é aparelho MFi)",
+     "Bastão RFID por Bluetooth: ler e abrir a ficha do animal (módulo nativo no Expo; plano B: bastão em modo teclado)",
+     "Balança por Bluetooth (Tru-Test S3 e ID5000 como primeiras): o peso entra sozinho na pesagem individual e na do lote",
+     "Animal por foto (a função de IA da onda 5) para quem não tem brinco eletrônico",
+     "Nota fiscal de compra de insumo pela câmera, lançada no estoque",
+     "Código de barras de medicamento e de sêmen"
+   ],
+   pronto:"Passar o bastão no brinco abre a ficha certa, e a pesagem do lote entra sem digitar um número."},
+
+  {n:12, t:"Do celular simples ao tablet, no sol e de luva", tags:[["app","app"],["voce","teste de campo"]],
+   por:"O aparelho do campo costuma ser um Android de entrada, com tela riscada, no sol. <em>Só testando com os peões da Miraí</em> aparece o que trava.",
+   itens:[
+     "Funcionar bem num Android de entrada (2 GB de RAM, tela de 5 polegadas) e no tablet do escritório",
+     "Contraste medido para sol forte e um modo de alto contraste",
+     "Fonte do sistema até 200% sem cortar nada",
+     "Alvos de toque para luva e mão molhada, e nada que dependa de gesto fino",
+     "Leitura em voz alta da ficha e dos avisos, para quem lê com dificuldade",
+     "Teste de campo na Miraí com 3 peões, observado, e correção do que eles travarem",
+     "Uma semana de uso real no lugar do caderno, com o painel conferindo o que chegou"
+   ],
+   pronto:"Os peões da Miraí usam o app uma semana no lugar do caderno, e o que travou foi corrigido."},
+
+  {n:13, t:"O painel do escritório", tags:[["painel","painel"]],
+   por:"O dono e o gestor querem ver a fazenda num olhar e agir rápido. <em>Dashboard para saber, tabela para fazer.</em>",
+   itens:[
+     "Início que aponta ação: primeiro os animais que pedem atenção, depois os números do dia (leite, lactação, prenhes, partos e secagens da semana, lotes de corte)",
+     "Dashboards por módulo (reprodução, leite, corte, sanidade, financeiro); cada número abre a lista já filtrada",
+     "Tabelas que se comportam como planilha: filtro salvo, edição na linha, colar em várias células, ação em lote e exportação para Excel",
+     "Busca global (Ctrl+K) por animal, lote, medicamento, pessoa ou tela, com filtro por campo (brinco:2047) e a tecla ? listando os atalhos",
+     "Cadastro rápido em gaveta lateral, sem sair da lista, e tarefa mandada do escritório para o campo, com o andamento à vista",
+     "Importar planilha em etapas: mapear as colunas, ver o erro de cada linha e corrigir ali mesmo, baixar as linhas recusadas",
+     "Relatórios em PDF com a marca da fazenda",
+     "Do computador ao celular: o painel também funciona na tela pequena"
+   ],
+   pronto:"Você faz pelo painel, sem ajuda e mais rápido, tudo o que fazia no Lovable."},
+
+  {n:14, t:"Tudo o que o Lovable faz, no produto", tags:[["app","app"],["painel","painel"]],
+   por:"Lição do Café com Crédito: <em>página levada não quer dizer função levada</em>. O inventário função a função é o que garante que nada fica para trás.",
+   itens:[
+     "Inventário função a função das 33 telas do Lovable, com a casa de cada função: app, painel ou os dois",
+     "Rebanho: animais, lotes, pesagens, mapa e identificação por foto",
+     "Reprodução: coberturas, diagnósticos, secagens, partos, IATF e relatório",
+     "Produção: ordenha diária e cooperativa (nota, vales, venda a granel)",
+     "Saúde: enfermaria, vacinação, calendário de vacinas, tratamentos e mastite",
+     "Nutrição: dietas, plantio e silo, estoque",
+     "Comercial: financeiro, vendas avulsas (silo, esterco, leite) e gestão de sócios",
+     "Estrutura e gestão: equipamentos, tarefas, usuários, pendências da importação e configurações"
+   ],
+   pronto:"Cada linha do inventário tem casa no app ou no painel, e nenhuma ficou para trás."},
+
+  {n:15, t:"Zootecnia e gestão no mesmo lugar", tags:[["painel","painel"],["banco","banco"]],
+   por:"No leite, o financeiro do mercado fica no caixa e na nota; no corte, só o iRancho baixa o estoque pelo manejo. <em>Aqui o lançamento de campo vira custo e resultado sozinho</em>, no leite e no corte: a vacina baixa o estoque, entra no custo do animal e do litro e aparece no financeiro.",
+   itens:[
+     "Plano de contas e centros de custo da atividade (leite, cria, recria, engorda, lavoura)",
+     "Financeiro: contas a pagar e a receber, fluxo de caixa e conciliação simples",
+     "Estoque com custo médio, ligado a tratamentos, dietas, suplementação e plantio",
+     "Custo do litro de leite e da arroba produzida, por mês e por lote",
+     "Pessoal: diárias e folha, ligadas às tarefas",
+     "Resultado da atividade (DRE) e indicadores: margem por litro, custo por vaca, resultado por lote de corte",
+     "Sócios e parcerias com o fechamento mensal (o que já existe, levado e conferido)",
+     "Nota fiscal do produtor (obrigatória para todos desde 05/01/2026): integrar um emissor ou exportar para o contador"
+   ],
+   pronto:"O custo do litro e da arroba do mês saem sozinhos dos lançamentos de campo e do financeiro, sem planilha."},
+
+  {n:16, t:"Corte: do bezerro ao frigorífico", tags:[["app","app"],["painel","painel"],["banco","banco"]],
+   por:"Pedido do Daniel em 10/11/2026: “O app tem que servir tanto pra leite quanto pra corte”. <em>O argumento de venda é um sistema só para leite, corte e gestão.</em> As regras vêm da onda 8; aqui entram o manejo, os indicadores e a venda.",
+   itens:[
+     "Fases do corte (cria, recria, engorda) com lotes que mudam de fase e de piquete",
+     "Suplementação a pasto e no cocho, por lote, com consumo e custo",
+     "Indicadores de corte ao lado dos de leite: GMD por lote, arrobas por hectare por ano, desfrute, taxa de desmama, custo por arroba e resultado por lote",
+     "Compra de animais para reposição, com peso de entrada, preço e GTA",
+     "Venda para frigorífico: romaneio, peso vivo e de carcaça, rendimento, arroba negociada e desconto",
+     "Rastreabilidade: número eletrônico ISO no animal desde já e o caminho para o SISBOV e a identificação individual obrigatória",
+     "GTA: guardar o documento e o número em cada entrada e saída (a e-GTA de MG não tem API pública)",
+     "Uma fazenda de corte de demonstração para testar e vender"
+   ],
+   pronto:"Uma fazenda de corte de teste faz o ciclo inteiro, da compra ou nascimento à venda ao frigorífico, e vê o resultado do lote em arrobas e em reais."},
+
+  {n:17, t:"Mapa da fazenda e GPS", tags:[["app","app"],["painel","painel"]],
+   por:"Saber onde está cada lote e cada piquete é o que liga o pasto ao rebanho. <em>O mapa tem de abrir sem sinal</em>, por isso o mapa base vem do Mapbox, que guarda a área da fazenda no celular.",
+   itens:[
+     "Contorno da fazenda pela importação do arquivo do CAR que o próprio produtor fornece",
+     "Piquetes, talhões, aguadas, currais e benfeitorias desenhados no mapa, com área calculada",
+     "Lote ligado ao piquete: onde cada lote está e há quantos dias",
+     "GPS do celular: onde estou na fazenda e marcar um ponto (cerca quebrada, animal doente, cocho vazio)",
+     "Mapa da fazenda baixado no celular para uso sem sinal",
+     "Rotação de pastagem com ocupação, descanso e lotação por piquete"
+   ],
+   pronto:"O peão vê no celular, sem sinal, em que piquete está e qual lote deveria estar ali."},
+
+  {n:18, t:"Satélite e planejamento de plantio", tags:[["painel","painel"],["banco","banco"]],
+   por:"Ver a lavoura e o pasto de cima, sem sair do escritório. <em>Escolha da pesquisa: Sentinel-2</em>, com 10 m de resolução, passagem a cada 5 dias, dado gratuito e licença comercial clara.",
+   itens:[
+     "Índice de vegetação (NDVI) por talhão e piquete a partir do Sentinel-2, processado num serviço agendado (fora das funções do Supabase, pelo limite de tempo)",
+     "Estatística por talhão no banco e a imagem recortada no Storage, para o app levar sem sinal",
+     "Histórico por talhão e alerta de queda de vigor",
+     "Planejamento de safra: cultura, área, datas de plantio e de colheita, por talhão",
+     "Silagem: área, produtividade esperada e estoque de silo comparado com a necessidade do rebanho",
+     "Orçamento do plantio (o que já existe) ligado ao estoque e ao financeiro"
+   ],
+   pronto:"Você abre um talhão e vê a imagem de satélite, o vigor da lavoura e quanto silo ela vai dar."},
+
+  {n:19, t:"Clima e conforto do gado", tags:[["app","app"],["painel","painel"]],
+   por:"Chuva decide plantio, e calor derruba leite. <em>Escolha da pesquisa: Open-Meteo no plano comercial</em>, consultado pelo servidor uma vez por hora por fazenda e guardado, para o celular mostrar a última previsão mesmo sem sinal.",
+   itens:[
+     "Previsão de 7 a 16 dias na coordenada da fazenda, com cache no servidor",
+     "Chuva acumulada no mês e na safra, com o pluviômetro da fazenda lançado pelo app e a chuva observada do INMET como apoio",
+     "Índice de temperatura e umidade (ITU) e alerta de estresse térmico do rebanho de leite",
+     "Janela boa para plantio, pulverização e colheita",
+     "Aviso no celular quando vier chuva forte, geada ou calor extremo"
+   ],
+   pronto:"O app avisa de manhã quando o dia vai ter estresse térmico ou chuva forte."},
+
+  {n:20, t:"Preços do mercado", tags:[["painel","painel"],["voce","você contrata"]],
+   por:"No corte, o preço da arroba do boi gordo, do bezerro e da reposição é central; no leite, o preço ao produtor. <em>A pesquisa achou que ninguém dá isso de graça para produto comercial</em>: o CEPEA pede autorização, a B3 vende licença, e raspar site está fora.",
+   itens:[
+     "Preço recebido lançado pela fazenda (leite do laticínio, arroba vendida), comparado com a referência",
+     "Widget do CEPEA no painel, que a política dele libera sem pedir autorização",
+     "Pedir licença ao CEPEA e proposta da Agrolink para um feed de preços",
+     "Referência mensal do leite (Conseleite) e boi gordo futuro (a B3 liquida pelo indicador DATAGRO desde 2025), via distribuidor licenciado",
+     "Arroba do boi gordo, do bezerro e da reposição, com fonte e data em cada número",
+     "Simulação para o corte: vender agora ou segurar, com o custo da arroba da onda 15"
+   ],
+   pronto:"O painel mostra o preço do dia com fonte e licença, e a margem da fazenda contra ele."},
+
+  {n:21, t:"Genealogia e associações de raça", tags:[["banco","banco"],["painel","painel"],["voce","você contata"]],
+   por:"É o plano que ficou pela metade no Lovable. <em>Girolando e ABCZ não têm API publicada</em>, então o caminho começa por parceria formal; a consulta automática só entra se os termos permitirem.",
+   itens:[
+     "Pedir à Girolando e à ABCZ um canal oficial (convênio ou API) e conferir os termos de uso da consulta",
+     "Consulta pelo RGD, pela via que as associações autorizarem",
+     "Quadro comparando o sistema com a associação, aplicando só o que o usuário marcar",
+     "Atualização em massa com fila de aprovação e relatório",
+     "Ancestrais fora do rebanho até os bisavós, na árvore e no parentesco",
+     "Sugestão de acasalamento: touro do estoque de sêmen com menor parentesco"
+   ],
+   pronto:"Os animais registrados da Miraí têm a genealogia conferida, e o sistema sugere o touro para cada vaca."},
+
+  {n:22, t:"Assistente e alertas inteligentes", tags:[["app","app"],["painel","painel"]],
+   por:"O sistema deve avisar antes de alguém perguntar. <em>Alerta calculado no servidor, notificação para quem precisa agir</em>, e uma pergunta em português quando a tela não basta.",
+   itens:[
+     "Alertas do dia: cio esperado, diagnóstico pendente, parto previsto, secagem, fim de carência, vacina vencendo, lote de corte no peso",
+     "Notificação no celular para a pessoa certa (o peão do lote, o veterinário, o gestor)",
+     "Perguntar em português: “quais vacas secam esta semana?”, “quanto custou a arroba em outubro?”, com a lista por trás da resposta",
+     "Pergunta por voz no app",
+     "Ligar sensores de vaca (SenseHub, CowManager, Afimilk) e a qualidade do leite que o laticínio manda (CCS, CBT, sólidos)",
+     "Custo da IA medido e com cota por fazenda"
+   ],
+   pronto:"O gestor pergunta ao sistema e recebe a resposta certa com a lista por trás."},
+
+  {n:23, t:"Pré-requisitos das lojas", tags:[["loja","lojas"],["voce","você faz"]],
+   por:"As lojas recusam app sem exclusão de conta, sem política de privacidade ou sem explicar por que pede câmera, localização e Bluetooth. <em>Melhor ter tudo pronto antes do primeiro envio.</em>",
+   itens:[
+     "Contas de desenvolvedor: Apple (US$ 99 por ano) e Google Play (US$ 25 uma vez) <em>(decisão D4)</em>",
+     "Política de privacidade e termos de uso (LGPD), deixando claro que o dado é do fazendeiro",
+     "Exclusão de conta pelo próprio usuário, no app e no site",
+     "Declarações de privacidade das duas lojas e as permissões explicadas (câmera, localização, Bluetooth, microfone)",
+     "Conta e fazenda de demonstração para a revisão das lojas",
+     "Ícone, telas de divulgação e textos das lojas"
+   ],
+   pronto:"Tudo o que as lojas pedem está pronto antes do primeiro envio."},
+
+  {n:24, t:"Pronto para vender", tags:[["painel","painel"],["banco","banco"],["voce","você decide"]],
+   por:"O que separa um sistema de fazenda de um produto: <em>um fazendeiro de fora entra, configura e começa sozinho</em>.",
+   itens:[
+     "Nome e marca do produto <em>(decisão D3)</em>",
+     "Cadastro de fazenda nova com assistente: atividades (leite, corte), lotes, piquetes e equipe",
+     "Importar de planilha e de outros sistemas na entrada (exportações do Ideagri, Jetbov e similares)",
+     "Preço público por animal, sem surpresa na renovação (a maior queixa contra o Herdwatch), com assinatura e cobrança",
+     "Painel da plataforma: clientes, uso, saúde da conta e suporte",
+     "Fazendas de demonstração de leite e de corte para a venda",
+     "Página do produto"
+   ],
+   pronto:"Um fazendeiro de fora cria a conta, importa o rebanho e começa a usar sem falar com ninguém."},
+
+  {n:25, t:"Publicação", tags:[["loja","lojas"],["infra","infra"]],
+   por:"Do repositório para as lojas e para o domínio definitivo, com caminho de correção rápida.",
+   itens:[
+     "Builds pelo EAS para Android e iOS",
+     "Teste interno: TestFlight e trilha interna da Play Store com os peões e você",
+     "Atualização pelo ar (OTA) para corrigir sem passar pela loja",
+     "Envio para revisão nas duas lojas e respostas aos revisores",
+     "Painel no domínio definitivo"
+   ],
+   pronto:"O app está nas duas lojas e o painel no ar."},
+
+  {n:26, t:"Operação", tags:[["infra","infra"]],
+   por:"Com clientes pagando, <em>o erro tem de avisar a equipe antes de o fazendeiro reclamar</em>.",
+   itens:[
+     "Monitoramento de erros no app, no painel e nas funções do servidor",
+     "Backup diário conferido e um ensaio de restauração de verdade",
+     "Canal de suporte e página de status",
+     "Métricas de uso por fazenda e por módulo",
+     "Rotina de versão: o que entra, teste, homologação e produção"
+   ],
+   pronto:"Um erro em produção avisa a equipe antes do cliente, e um backup já foi restaurado de verdade."}
+];
+
+/* Copia exata do conteudo da pagina como foi escrito, tirada antes de qualquer
+   desenho; e dela que sai a versao salva, so com o estado trocado. */
+const PAGINA = Array.prototype.slice.call(document.body.children).filter(function (el) {
+  return el.hasAttribute("data-pg");
+}).map(function (el) { return el.outerHTML; }).join("\n");
+
+let estado = {feitos: []};
+try { estado = JSON.parse(document.getElementById("estado").textContent) || {feitos: []}; } catch (e) {}
+if (!Array.isArray(estado.feitos)) estado.feitos = [];
+let feitos = new Set(estado.feitos);
+let artefato = null;
+let pendente = null;
+
+const trilha = document.getElementById("trilha");
+ONDAS.forEach(function (o) {
+  if (FASES[o.n]) {
+    const f = FASES[o.n];
+    const cab = document.createElement("div");
+    cab.className = "fase";
+    cab.innerHTML = '<p class="rot">' + f[0] + '</p><h3>' + f[1] + '</h3><p>' + f[2] + '</p>';
+    trilha.appendChild(cab);
+  }
+  const sec = document.createElement("article");
+  sec.className = "onda";
+  sec.id = "onda-" + o.n;
+  const tags = o.tags.map(function (t) { return '<span class="pill ' + t[0] + '">' + t[1] + "</span>"; }).join("");
+  const itens = o.itens.map(function (txt, i) {
+    const id = "w" + o.n + "-" + i;
+    return '<label class="item" for="' + id + '"><input type="checkbox" id="' + id + '" data-onda="' + o.n + '"><span>' + txt + "</span></label>";
+  }).join("");
+  sec.innerHTML =
+    '<div class="o-cab"><div class="o-num">' + String(o.n).padStart(2, "0") + '</div>' +
+    '<div class="o-tit"><div class="o-tags">' + tags + '</div><h3>' + o.t + '</h3><p class="o-por">' + o.por + '</p></div></div>' +
+    '<div class="o-corpo"><div class="itens">' + itens + '</div>' +
+    '<div class="pronto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><p><b>Pronto quando:</b> ' + o.pronto + '</p></div></div>' +
+    '<div class="o-pe"><div class="prog"><span class="mini"><i id="mini-' + o.n + '" style="width:0%"></i></span><span id="cont-' + o.n + '">0 de ' + o.itens.length + '</span></div>' +
+    '<label class="fecha" for="w' + o.n + '"><input type="checkbox" id="w' + o.n + '" data-fecha="' + o.n + '"><span>Onda concluída</span></label></div>';
+  trilha.appendChild(sec);
+});
+
+const todosItens = Array.prototype.slice.call(document.querySelectorAll("input[data-onda]"));
+const todosFecha = Array.prototype.slice.call(document.querySelectorAll("input[data-fecha]"));
+
+function pinta() {
+  ONDAS.forEach(function (o) {
+    const itens = todosItens.filter(function (el) { return el.dataset.onda === String(o.n); });
+    const n = itens.filter(function (el) { return el.checked; }).length;
+    document.getElementById("mini-" + o.n).style.width = (itens.length ? (n / itens.length) * 100 : 0) + "%";
+    document.getElementById("cont-" + o.n).textContent = n + " de " + itens.length;
+    document.getElementById("onda-" + o.n).classList.toggle("feita", document.getElementById("w" + o.n).checked);
+  });
+  const ondasFeitas = todosFecha.filter(function (el) { return el.checked; }).length;
+  const itensFeitos = todosItens.filter(function (el) { return el.checked; }).length;
+  document.getElementById("pg-ondas").innerHTML = ondasFeitas + "<small>de " + ONDAS.length + "</small>";
+  document.getElementById("pg-itens").innerHTML = itensFeitos + "<small>de " + todosItens.length + "</small>";
+  document.getElementById("pg-barra").style.width = (todosItens.length ? (itensFeitos / todosItens.length) * 100 : 0) + "%";
+}
+
+function aplica() {
+  todosItens.concat(todosFecha).forEach(function (el) { el.checked = feitos.has(el.id); });
+  pinta();
+}
+
+function docAtualizado() {
+  const json = JSON.stringify({feitos: Array.prototype.slice.call(feitos)}).replace(/</g, "\\u003c");
+  const reset = (document.head && document.head.querySelector("style")) ? document.head.querySelector("style").textContent : "";
+  const corpo = PAGINA.replace(/(<script[^>]*id="estado"[^>]*>)[\s\S]*?(<\/script>)/, function (m, a, b) { return a + json + b; });
+  return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>' +
+    reset + "</style></head><body>" + corpo + "</body></html>";
+}
+
+const aviso = document.getElementById("estado-salvar");
+function diz(txt, off) {
+  aviso.className = "estado" + (off ? " off" : "");
+  aviso.querySelector("span").textContent = txt;
+}
+
+function salva() {
+  if (artefato) {
+    clearTimeout(pendente);
+    pendente = setTimeout(function () {
+      diz("Salvando…");
+      artefato.publish(docAtualizado()).then(function () {
+        diz("Salvo para todo mundo que abrir este link");
+      }).catch(function (e) {
+        if (e && e.code === "conflict") return;
+        if (e && (e.code === "not_granted" || e.code === "not_writer")) { diz("Você pode ver o plano, mas só quem edita salva marcações", true); return; }
+        diz("Não consegui salvar desta vez; sua marcação vale só nesta tela", true);
+      });
+    }, 900);
+  } else {
+    try { localStorage.setItem("ondas-mirai", JSON.stringify(Array.prototype.slice.call(feitos))); } catch (e) {}
+  }
+}
+
+document.addEventListener("change", function (ev) {
+  const el = ev.target;
+  if (!(el instanceof HTMLInputElement) || el.type !== "checkbox") return;
+  if (el.checked) feitos.add(el.id); else feitos.delete(el.id);
+  pinta();
+  salva();
+});
+
+aplica();
+diz("Carregando…");
+
+function soLocal() {
+  try {
+    const local = JSON.parse(localStorage.getItem("ondas-mirai") || "[]");
+    if (Array.isArray(local) && local.length) { feitos = new Set(local); aplica(); }
+  } catch (e) {}
+  diz("Suas marcações ficam salvas só neste navegador", true);
+}
+
+if (window.claude && window.claude.use) {
+  window.claude.use("artifact").then(function (a) {
+    artefato = a;
+    if (a) diz("As marcações ficam salvas para todo mundo que abrir este link");
+    else soLocal();
+  }).catch(soLocal);
+} else {
+  soLocal();
+}
+</script>
