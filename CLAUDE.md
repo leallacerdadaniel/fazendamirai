@@ -18,6 +18,10 @@ ondas, armadilhas. Mudou onda ou decisão, registra aqui na mesma tarefa.
   `https://github.com/leallacerdadaniel/fazendamirai` (criado pelo Daniel no GitHub
   Desktop). A pasta `~/Documents/GitHub/fazenda-mirai`, com hífen, foi a primeira cópia
   de 31/10/2026; o histórico foi trazido para cá em 10/11/2026 e ela pode ser apagada.
+- **Enviar ao GitHub:** o terminal das sessões não tem login no GitHub (o
+  `osxkeychain` está vazio para github.com; o GitHub Desktop guarda o acesso dele). O
+  envio sai pelo GitHub Desktop, com o Daniel clicando em Push origin; depois, conferir
+  com `git branch -vv` que `origin/main` bate com o `main` local.
 - **Banco novo:** organização Supabase "Fazenda Mirai" (`asaemgrkceqevbqxuwqs`,
   plano gratuito), projeto `Fazenda_Mirai` (`vkwpqjfceeqdlfwtnxof`), São Paulo,
   Postgres 17, criado em 10/11/2026. Ainda vazio.
@@ -145,7 +149,7 @@ qualquer etapa.
 
 | Onda | O que é | Estado |
 | --- | --- | --- |
-| 0 | Trazer o projeto para casa | Em andamento: 5 de 7 itens (31/10 e 10/11/2026). Faltam o envio ao GitHub (espera o ok do Daniel) e confirmar as regras da casa |
+| 0 | Trazer o projeto para casa | Em andamento: 6 de 7 itens (31/10 e 10/11/2026). Histórico no GitHub desde 10/11/2026. Falta confirmar as regras da casa |
 | 1 | Seu ambiente no Mac | Não iniciada |
 | 2 | Monorepo (`apps/painel`, `apps/app`, `packages/*`) e o guia de design do campo e do escritório | Não iniciada |
 | 3 | Muitas fazendas, leite e corte no mesmo banco | Não iniciada |
