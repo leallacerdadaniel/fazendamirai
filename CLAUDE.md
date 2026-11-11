@@ -34,7 +34,7 @@ ondas, armadilhas. Mudou onda ou decisão, registra aqui na mesma tarefa.
   [docs/pesquisa/2026-11-10-concorrentes-e-usabilidade.md](docs/pesquisa/2026-11-10-concorrentes-e-usabilidade.md)
   e [docs/pesquisa/2026-11-10-integracoes.md](docs/pesquisa/2026-11-10-integracoes.md).
 
-## Regras da casa (herdadas do Café com Crédito, a confirmar com o Daniel)
+## Regras da casa (herdadas do Café com Crédito, confirmadas pelo Daniel em 10/11/2026)
 
 1. Ícone vetorizado (`lucide-react`), nunca emoji, em código, documento e interface.
 2. Não usar travessão (o caractere longo). Usar vírgula, dois-pontos ou parênteses.
@@ -149,7 +149,7 @@ qualquer etapa.
 
 | Onda | O que é | Estado |
 | --- | --- | --- |
-| 0 | Trazer o projeto para casa | Em andamento: 6 de 7 itens (31/10 e 10/11/2026). Histórico no GitHub desde 10/11/2026. Falta confirmar as regras da casa |
+| 0 | Trazer o projeto para casa | **Concluída (10/11/2026)**, os 7 itens: repositório no GitHub, build e testes verdes, inventário, dado real medido, plano publicado, regras da casa confirmadas |
 | 1 | Seu ambiente no Mac | Não iniciada |
 | 2 | Monorepo (`apps/painel`, `apps/app`, `packages/*`) e o guia de design do campo e do escritório | Não iniciada |
 | 3 | Muitas fazendas, leite e corte no mesmo banco | Não iniciada |
