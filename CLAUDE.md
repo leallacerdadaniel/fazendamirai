@@ -22,6 +22,16 @@ ondas, armadilhas. Mudou onda ou decisão, registra aqui na mesma tarefa.
   `osxkeychain` está vazio para github.com; o GitHub Desktop guarda o acesso dele). O
   envio sai pelo GitHub Desktop, com o Daniel clicando em Push origin; depois, conferir
   com `git branch -vv` que `origin/main` bate com o `main` local.
+- **Ambiente e permissões das sessões (onda 1):** o modo automático recusa gravar no
+  perfil do shell (`~/.zprofile`) e instalador que pede senha; isso fica com o Daniel,
+  com os comandos em [docs/onda-1/README-onda-1.md](docs/onda-1/README-onda-1.md). O
+  pnpm mora em `~/Library/pnpm` (`/usr/local/bin` é do root). O painel atual sobe com
+  `npm run dev` em http://localhost:8080. A ferramenta de pré-visualização do app ainda
+  aponta para a pasta antiga `fazenda-mirai`: subir o servidor pelo Terminal e abrir o
+  endereço direto. A máquina está logada na Expo na conta `cheztoibh`, de outro projeto.
+- **Duas sessões no mesmo plano:** em 10/11/2026 uma sessão paralela do Daniel também
+  editou o CLAUDE.md e o HTML das ondas. Antes de editar, ver `git status`; antes de
+  republicar, ler a versão publicada e juntar o que a outra sessão mudou.
 - **Banco novo:** organização Supabase "Fazenda Mirai" (`asaemgrkceqevbqxuwqs`,
   plano gratuito), projeto `Fazenda_Mirai` (`vkwpqjfceeqdlfwtnxof`), São Paulo,
   Postgres 17, criado em 10/11/2026. Ainda vazio.
@@ -157,7 +167,7 @@ qualquer etapa.
 | Onda | O que é | Estado |
 | --- | --- | --- |
 | 0 | Trazer o projeto para casa | **Concluída (10/11/2026)**, os 7 itens: repositório no GitHub, build e testes verdes, inventário, dado real medido, plano publicado, regras da casa confirmadas |
-| 1 | Seu ambiente no Mac | Não iniciada |
+| 1 | Seu ambiente no Mac | **Em andamento (10/11/2026)**, 3 de 7: Node e pnpm, Xcode e simulador, painel local. App Expo de teste rodou no simulador do iPhone 17 com recarga automática. Faltam, do Daniel: Homebrew, Docker Desktop, Supabase CLI, Android Studio (comandos no README da onda), o celular pelo QR e a conta Expo da Miraí. Ver [docs/onda-1/README-onda-1.md](docs/onda-1/README-onda-1.md) |
 | 2 | Monorepo (`apps/painel`, `apps/app`, `packages/*`) e o guia de design do campo e do escritório | Não iniciada |
 | 3 | Muitas fazendas, leite e corte no mesmo banco | Não iniciada |
 | 4 | O banco novo no Supabase da Fazenda Mirai | Não iniciada |

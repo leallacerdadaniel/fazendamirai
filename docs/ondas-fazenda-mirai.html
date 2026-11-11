@@ -177,7 +177,7 @@ td.nos{background:color-mix(in srgb,var(--ouro) 10%,var(--card))}
 .rodape p{font-size:13.5px;color:var(--ink2);line-height:1.55;max-width:76ch}
 .rodape b{color:var(--ink)}
 </style>
-<script data-pg id="estado" type="application/json">{"feitos":["w0-0","w0-1","w0-2","w0-3","w0-5","w0-4","w0-6","w0"]}</script>
+<script data-pg id="estado" type="application/json">{"feitos":["w0-0","w0-1","w0-2","w0-3","w0-5","w0-4","w0-6","w0","w1-0","w1-2","w1-6"]}</script>
 
 <div data-pg class="wrap">
 
@@ -190,7 +190,7 @@ td.nos{background:color-mix(in srgb,var(--ouro) 10%,var(--card))}
     </div>
     <h1>Do sistema da Miraí ao produto do agro</h1>
     <p class="lead">Vinte e sete ondas, na ordem em que as dependências mandam: primeiro trazer o que existe e pôr o dado real em casa própria, depois o app do campo que funciona sem sinal, o painel do escritório, a gestão junto da zootecnia, leite e corte, as integrações e, por fim, as lojas e a venda para outros fazendeiros. Marque as caixas conforme andar; o que você marcar fica salvo para todo mundo que abrir este link.</p>
-    <div class="meta"><span>App Expo offline primeiro</span><span>Painel web</span><span>Supabase da Fazenda Mirai</span><span>Leite e corte</span><span>Android e iOS</span><span id="atualizado">Atualizado em 10/11/2026 às 21:27</span></div>
+    <div class="meta"><span>App Expo offline primeiro</span><span>Painel web</span><span>Supabase da Fazenda Mirai</span><span>Leite e corte</span><span>Android e iOS</span><span id="atualizado">Atualizado em 10/11/2026 às 21:29</span></div>
     <!-- O span#atualizado leva dia e hora da ultima atualizacao deste arquivo, no horario
          de Brasilia. Toda vez que este HTML mudar, esse carimbo muda junto, antes de
          republicar o artefato. -->
@@ -342,16 +342,16 @@ const ONDAS = [
    ],
    pronto:"O código está no GitHub, compila na máquina, e tudo o que existe está inventariado."},
 
-  {n:1, t:"Seu ambiente no Mac", tags:[["voce","você faz"],["infra","infra"]],
-   por:"Te dá autonomia para ver o app no simulador do iPhone, no emulador Android e no seu celular, e para rodar o banco na máquina antes de tocar em produção. <em>No Mac dá para compilar o iOS localmente</em>, o que o Café com Crédito não tinha.",
+  {n:1, t:"Seu ambiente no Mac", tags:[["voce","você faz"],["infra","em andamento"]],
+   por:"Te dá autonomia para ver o app no simulador do iPhone, no emulador Android e no seu celular, e para rodar o banco na máquina antes de tocar em produção. <em>No Mac dá para compilar o iOS localmente</em>, o que o Café com Crédito não tinha. Os passos com a senha do Mac estão em <code>docs/onda-1/README-onda-1.md</code>.",
    itens:[
-     "Node LTS e pnpm pelo corepack",
-     "Docker (Docker Desktop ou OrbStack) e Supabase CLI, com <code>supabase start</code> subindo o banco local",
-     "Xcode com o simulador do iPhone e as ferramentas de linha de comando",
-     "Android Studio com SDK, JDK 17 e um emulador",
-     "Expo Go e um development build de teste abrindo no seu celular",
-     "Conta Expo criada e logada na máquina, para os builds na nuvem (EAS)",
-     "O painel atual rodando local contra o banco do Lovable, para comparar lado a lado durante as ondas"
+     "Node LTS e pnpm pelo corepack <em>(feito em 10/11/2026: Node 24.22.1 já estava, pnpm 12.18.0 instalado)</em>",
+     "Docker Desktop e Supabase CLI, com <code>supabase start</code> subindo o banco local <em>(falta: Homebrew e Docker Desktop, com a sua senha)</em>",
+     "Xcode com o simulador do iPhone e as ferramentas de linha de comando <em>(já estava: Xcode 27.2)</em>",
+     "Android Studio com SDK, JDK 17 e um emulador <em>(falta: instalar pelo Homebrew e aceitar as licenças)</em>",
+     "Expo Go e um development build de teste abrindo no seu celular <em>(parcial em 10/11/2026: app em branco no Expo Go do simulador, com recarga automática; faltam o celular e o development build)</em>",
+     "Conta Expo criada e logada na máquina, para os builds na nuvem (EAS) <em>(a máquina está na conta de outro projeto; falta decidir a da Miraí)</em>",
+     "O painel atual rodando local contra o banco do Lovable, para comparar lado a lado durante as ondas <em>(feito em 10/11/2026: http://localhost:8080)</em>"
    ],
    pronto:"Um app Expo em branco abre no simulador do iPhone, no emulador Android e no seu celular, com recarga automática ao salvar."},
 
