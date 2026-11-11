@@ -29,9 +29,12 @@ ondas, armadilhas. Mudou onda ou decisão, registra aqui na mesma tarefa.
   `npm run dev` em http://localhost:8080. A ferramenta de pré-visualização do app ainda
   aponta para a pasta antiga `fazenda-mirai`: subir o servidor pelo Terminal e abrir o
   endereço direto. A máquina está logada na Expo na conta `cheztoibh`, de outro projeto.
-- **Duas sessões no mesmo plano:** em 10/11/2026 uma sessão paralela do Daniel também
-  editou o CLAUDE.md e o HTML das ondas. Antes de editar, ver `git status`; antes de
-  republicar, ler a versão publicada e juntar o que a outra sessão mudou.
+- **Várias sessões no mesmo plano:** o Daniel abre sessões paralelas (as "btw") que
+  trazem pedidos. Em 10/11/2026 o CLAUDE.md e o HTML das ondas foram editados e
+  republicados às 21:27 por alguém de fora desta sessão (outra sessão ou o próprio
+  Daniel; a sessão "leite e corte" confirmou que não foi ela). Antes de editar, ver
+  `git status`; antes de republicar, ler a versão publicada e juntar o que mudou; e não
+  atribuir mudança a uma sessão sem confirmar com ela.
 - **Banco novo:** organização Supabase "Fazenda Mirai" (`asaemgrkceqevbqxuwqs`,
   plano gratuito), projeto `Fazenda_Mirai` (`vkwpqjfceeqdlfwtnxof`), São Paulo,
   Postgres 17, criado em 10/11/2026. Ainda vazio.
